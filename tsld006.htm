@@ -1,0 +1,76 @@
+
+<HTML>
+
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>A Simple Example</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>A Simple Example</H1> 
+ <P><UL>
+<H2>use DBI;
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>$dbh = DBI-&#062connect('dbi:ODBC:PRICE', 'user', 'password',
+</H2>
+</UL><UL>
+<H2>		{ RaiseError =&#062 1, AutoCommit =&#062 0 });
+</H2>
+</UL><UL>
+<H2>$upd = $dbh-&#062prepare('UPDATE prices SET price=? WHERE prod=?');
+</H2>
+</UL><UL>
+<H2>$ins = $dbh-&#062prepare('INSERT INTO prices(prod,price) VALUES (?,?)');
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>while ($line = &#060COST&#062) {
+</H2>
+</UL><UL>
+<H2>    chop $line;
+</H2>
+</UL><UL>
+<H2>    ($prod, $price) = split /,/, $line;
+</H2>
+</UL><UL>
+<H2>    $rows = $upd-&#062execute($price, $prod);
+</H2>
+</UL><UL>
+<H2>    $ins-&#062execute($prod,$price) if $rows == 0;
+</H2>
+</UL><UL>
+<H2>}
+</H2>
+</UL><UL>
+<H2>$db-&#062commit;</H2>
+</UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld005.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld007.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld006.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+ <FONT size=4><STRONG> Notes: </FONT></STRONG>
+  <HR SIZE=3> <P> <UL>
+Very few lines of code.
+</UL><UL>
+
+</UL><UL>
+Very simple to learn and use.
+</UL> </P> 
+
+</Body>
+</HTML>

@@ -1,0 +1,50 @@
+
+<HTML>
+
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>What's the difference?</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>What's the difference?</H1> 
+ <P><UL>
+<LI><H2>while(@row = $sth-&#062fetchrow_array) {  }
+</H2>
+<UL>
+<LI>one field:   3100 fetches per cpu second
+<LI>ten fields:  1000 fetches per cpu second
+</UL></UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<LI><H2>while($row = $sth-&#062fetchrow_arrayref) {  }
+</H2>
+<UL>
+<LI>one field:   5300 fetches per cpu second
+<LI>ten fields:  4000 fetches per cpu second 
+<LI>
+</UL></UL><UL>
+<LI><H2>Notes:
+</H2>
+<UL>
+<LI>Timings made on an old Sparc 10 using DBD::Oracle.
+<LI>Timings assume instant record fetch within driver.
+<LI>Fields all one char. @row would be even slower for more/bigger fields.</UL></UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld014.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld016.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld015.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+
+
+</Body>
+</HTML>

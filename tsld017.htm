@@ -1,0 +1,82 @@
+
+<HTML>
+
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>Safety by example</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>Safety by example</H1> 
+ <P><UL>
+<H2>use DBI;
+</H2>
+</UL><UL>
+<H2>use Text::Wrap;
+</H2>
+</UL><UL>
+<H2>$dbh = DBI-&#062connect(…, …, …, {
+</H2>
+</UL><UL>
+<H2>    AutoCommit =&#062 0, RaiseError =&#062 1
+</H2>
+</UL><UL>
+<H2>});
+</H2>
+</UL><UL>
+<H2>eval {
+</H2>
+</UL><UL>
+<H2>    $sth = $dbh-&#062prepare('insert into table values (?)');
+</H2>
+</UL><UL>
+<H2>    foreach (@array_of_long_strings) {
+</H2>
+</UL><UL>
+<H2>        $text = wrap($_);
+</H2>
+</UL><UL>
+<H2>        $sth-&#062execute($test);
+</H2>
+</UL><UL>
+<H2>    }
+</H2>
+</UL><UL>
+<H2>};
+</H2>
+</UL><UL>
+<H2>$@ ? $dbh-&#062rollback : $dbh-&#062commit;</H2>
+</UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld016.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld018.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld017.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+ <FONT size=4><STRONG> Notes: </FONT></STRONG>
+  <HR SIZE=3> <P> <UL>
+Classic example:
+</UL><UL>
+	bank account transfer:
+</UL><UL>
+		debit one account
+</UL><UL>
+		credit another account
+</UL><UL>
+	must be an ‘atomic’ operation.
+</UL><UL>
+	Can’t allow debit without the credit.
+</UL><UL>
+	Server-side errors: disk crash etc
+</UL><UL>
+	Client side errors: program die()’s or is killed</UL> </P> 
+
+</Body>
+</HTML>
