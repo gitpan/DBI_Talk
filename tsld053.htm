@@ -1,0 +1,53 @@
+
+<HTML>
+
+<HEAD>
+
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>Handling LONG/BLOB data</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>Handling LONG/BLOB data</H1> 
+ <P><UL>
+<LI><H2>What makes LONG / BLOB / MEMO data special?
+</H2>
+<UL>
+<LI>Not practical to pre-allocate fixed size buffers for worst case
+<LI>
+</UL></UL><UL>
+<LI><H2>Fetching LONGs - treat as normal fields after setting:
+</H2>
+<UL>
+<LI>$dbh-&#062{LongReadLen} - buffer size to allocate for expected data
+<LI>$dbh-&#062{LongTruncOk} - should truncating-to-fit be allowed
+<LI>
+</UL></UL><UL>
+<LI><H2>Inserting LONGs
+</H2>
+<UL>
+<LI>The limitations of string literals
+<LI>The benefits of placeholders
+<LI>
+</UL></UL><UL>
+<LI><H2>Chunking / Piecewise processing not supported
+</H2>
+<UL>
+<LI>So you're limited to available memory
+<LI>Some drivers support blob_read()and other private method</UL></UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld052.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld054.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld053.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+
+
+</Body>
+</HTML>

@@ -2,17 +2,32 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>So What?</TITLE> 
+ <TITLE>Error checking - ways and means</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>So What?</H1> 
+ <H1>Error checking - ways and means</H1> 
  <P><UL>
-<H2> </H2>
-</UL></P>
+<LI><H2>Error checking the hard way...
+</H2>
+<UL>
+
+<BR><BR>$h-&#062method || die "DBI method failed: $DBI::errstr";
+<BR>$h-&#062method || die "DBI method failed: $DBI::errstr";
+<BR>$h-&#062method || die "DBI method failed: $DBI::errstr";
+<BR>
+</UL></UL><UL>
+<LI><H2>Error checking the smart way...
+</H2>
+<UL>
+
+<BR><BR>$h-&#062{RaiseError} = 1;
+<BR>$h-&#062method;
+<BR>$h-&#062method;
+<BR>$h-&#062method;</UL></UL></P>
 <P></P> 
 <P>
 <TABLE>
@@ -24,14 +39,7 @@
 <BR>
 </P>
 
- <FONT size=4><STRONG> Notes: </FONT></STRONG>
-  <HR SIZE=3> <P> <UL>
-So What?
-</UL><UL>
-	What’s in it for you?
-</UL><UL>
-	Simply: Greater success, faster and for less effort.
-</UL> </P> 
+
 
 </Body>
 </HTML>

@@ -1,0 +1,46 @@
+
+<HTML>
+
+<HEAD>
+
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>Method call walk-through</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>Method call walk-through</H1> 
+ <P><UL>
+<LI><H2>Consider a simple prepare call:     $dbh-&#062prepare(…)
+</H2>
+</UL><UL>
+<LI><H2>$dbh is reference to an object in the DBI::db class (regardless of driver)
+</H2>
+</UL><UL>
+<LI><H2>The DBI::db::prepare method is an alias for the DBI dispatch method
+</H2>
+</UL><UL>
+<LI><H2>DBI dispatch calls the driver’s own prepare method something like this:
+</H2>
+<UL>
+   my $inner_hash_ref = …     # from tie magic
+<BR><BR>   my $implementor_class = …  # from DBI magic data
+<BR>   $inner_hash_ref-&#062$implementor_class::prepare(...)
+</UL></UL><UL>
+<LI><H2>Driver code gets the inner hash so it has fast access to the hash contents</H2>
+</UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld032.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld034.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld033.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+
+
+</Body>
+</HTML>

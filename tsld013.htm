@@ -2,54 +2,15 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>“Update the Prices in a Database!”</TITLE> 
+ <TITLE>PPT Slide</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>“Update the Prices in a Database!”</H1> 
- <P><UL>
-<H2>use DBI;
-</H2>
-</UL><UL>
-<H2>
-</H2>
-</UL><UL>
-<H2>$db = DBI-&#062connect('dbi:ODBC:PRICE', 'user', 'password',
-</H2>
-</UL><UL>
-<H2>		{ RaiseError =&#062 1 });
-</H2>
-</UL><UL>
-<H2>$upd = $db-&#062prepare('UPDATE prices SET price=? WHERE prod=?');
-</H2>
-</UL><UL>
-<H2>$ins = $db-&#062prepare('INSERT INTO prices(prod,price) VALUES (?,?)');
-</H2>
-</UL><UL>
-<H2>
-</H2>
-</UL><UL>
-<H2>while ($line = &#060COST&#062) {
-</H2>
-</UL><UL>
-<H2>    . . .
-</H2>
-</UL><UL>
-<H2>    $rows = $upd-&#062execute($price, $prod);
-</H2>
-</UL><UL>
-<H2>    $ins-&#062execute($prod,$price) if $rows == 0;
-</H2>
-</UL><UL>
-<H2>}
-</H2>
-</UL><UL>
-<H2>$db-&#062commit;</H2>
-</UL></P>
-<P></P> 
+ <H1>PPT Slide</H1> 
+ <P></P> 
 <P>
 <TABLE>
   <TD HEIGHT=100 WIDTH=100> <A HREF="tsld012.htm">Previous slide</A> </TD>
@@ -60,12 +21,7 @@
 <BR>
 </P>
 
- <FONT size=4><STRONG> Notes: </FONT></STRONG>
-  <HR SIZE=3> <P> <UL>
-Here we add just 8 lines to store the prices in the database.
-</UL><UL>
-The code not only updates prices for products already in the database but also inserts new records for any products not in the database.
-</UL> </P> 
+
 
 </Body>
 </HTML>

@@ -3,9 +3,9 @@
 
 <HTML>
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>What Next?</TITLE> 
+ <TITLE>Sling less for speed</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -13,75 +13,48 @@
 <CENTER>
 <TABLE WIDTH=100%> 
      <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <IMG SRC="img022.gif" usemap="#Objmap" WIDTH=600 HEIGHT=450 BORDER=0>
+         <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
+         <A HREF="sld021.htm">Previous</A>&nbsp;&nbsp;
+         <A HREF="sld023.htm">Next</A>&nbsp;&nbsp;
+         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+&nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="tsld022.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <A HREF="sld001.htm"><IMG SRC="first.gif" BORDER=0 ALT="First"></A>
-         <A HREF="sld021.htm"><IMG SRC="prev.gif" BORDER=0 ALT="Previous"></A>
-         <A HREF="sld023.htm"><IMG SRC="next.gif" BORDER=0 ALT="Next"></A>
-         <A HREF="sld029.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
-         <IMG SRC="space.gif" BORDER=0>
-         <A HREF="index.htm"><IMG SRC="info.gif" BORDER=0 ALT="Index"></A>
-         <A HREF="tsld022.htm"><IMG SRC="text.gif" BORDER=0 ALT="Text"></A>
+         <IMG SRC="img022.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 22 of 29</P>
+<P>Slide 22 of 64</P>
 </CENTER>
-
- <CENTER><Font size=4> <STRONG> Notes:  </FONT></STRONG><HR SIZE=3></CENTER><P> <UL>
-No particular order or time-scale!
-</UL><UL>
-Generic standards-based SQL92 Parser (in C) supplied with the DBI but not tied closely to it. Available for use by any module. SQL interfaces could appear on all sorts of modules. Outputs a parse tree as a perl recursive data structure.
-</UL><UL>
-A DBD::Proxy to ‘forward’ method calls and arguments across a network to any normal driver on a remote machine and return results
-</UL><UL>
-A DBD::Pipe to act as a virtual base class to simplify the development of drivers for data sources that don’t offer a programming interface/API.
-</UL><UL>
-Data types: date/time/interval - returned as a ref with ““ overloaded.
-</UL><UL>
-Define interface for non-blocking: $dbh-&#062{NonBlock}, $h-&#062done
-</UL><UL>
-	Initially Oracle and ODBC drivers. Only if database API supports it.
-</UL><UL>
-Make any changes required to support Threading in DB (if any)
-</UL><UL>
-	Individual drivers may need to declare themselves ‘thread-safe’
-</UL><UL>
-	If needed the DBI may block multi-threads from entering same driver.
-</UL><UL>
-Binding output parameters, typically for stored procedures.
-</UL><UL>
-Binding Arrays - especially Oracle
-</UL><UL>
-
-</UL> </P> 
 <!-- <UL>
-<H2>What Next?</H2>
+<H2>Sling less for speed</H2>
 </UL></P>
 <P><UL>
-<LI><H2>SQL for Non-SQL data sources
+<LI><H2>while(@row = $sth-&#062fetchrow_array) {  }
+</H2>
+<UL>
+<LI>one field:   3,100 fetches per cpu second
+<LI>ten fields:  1,000 fetches per cpu second
+</UL></UL><UL>
+<H2>
 </H2>
 </UL><UL>
-<LI><H2>Networking for Non-Networked data sources
+<LI><H2>while($row = $sth-&#062fetchrow_arrayref) {  }
+</H2>
+<UL>
+<LI>one field:   5,300 fetches per cpu second
+<LI>ten fields:  4,000 fetches per cpu second 
+</UL></UL><UL>
+<H2>
 </H2>
 </UL><UL>
-<LI><H2>Template driver for command line interfaces
+<LI><H2>Notes:
 </H2>
-</UL><UL>
-<LI><H2>Data types, especially date/time/interval
-</H2>
-</UL><UL>
-<LI><H2>Non-blocking (method calls return at once)
-</H2>
-</UL><UL>
-<LI><H2>Multi-threading
-</H2>
-</UL><UL>
-<LI><H2>Binding In/Out Variables
-</H2>
-</UL><UL>
-<LI><H2>Binding Arrays</H2>
-</UL></P>
+<UL>
+<LI>Timings made on an old SPARC 10 using DBD::Oracle
+<LI>Timings assume instant record fetch within driver
+<LI>Fields all just one char. @row would be even slower for more/bigger fields
+<LI>Use bind_columns() for direct access to fetched fields</UL></UL></P>
 <P>  -->
 </Body>
 </HTML>

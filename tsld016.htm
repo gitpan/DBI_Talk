@@ -2,34 +2,41 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Why the Perl DBI?</TITLE> 
+ <TITLE>Hot handles</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Why the Perl DBI?</H1> 
+ <H1>Hot handles</H1> 
  <P><UL>
-<LI><H2>Once upon a time…
+<LI><H2>Avoid using $dbh-&#062do(…) in a speed-critical loop.
 </H2>
-<UL>
-<LI>One language, many database interfaces
-</UL></UL><UL>
-<LI><H2>A vision of the future... “DBperl”
+</UL><UL>
+<LI><H2>Use $sth = $dbh-&#062prepare(…)
 </H2>
-<UL>
-<LI>Talk, talk, talk - the dbperl-interest mailing list
-</UL></UL><UL>
-<LI><H2>Perl 5 - A new way
+</UL><UL>
+<H2>     and $sth-&#062execute() instead.
 </H2>
-<UL>
-<LI>Modules and Objects. The DBI is born.
-</UL></UL><UL>
-<LI><H2>The future is now…
+</UL><UL>
+<LI><H2>Using prepare() gets a handle on the statement in the SQL cache and keeps it there.
 </H2>
-<UL>
-<LI>ODBC, Oracle, Informix, Ingres, mSQL, mysql, DB2, Solid, Sybase, Postgress, Quickbase, Empress, Fulcrum, ...</UL></UL></P>
+</UL><UL>
+<LI><H2>Using the handle for the pre-prepared statement avoids a round-trip to server for SQL cache-check / parsing etc.
+</H2>
+</UL><UL>
+<LI><H2>For example, convert looped
+</H2>
+</UL><UL>
+<H2>       do("insert … ?", undef, $id)
+</H2>
+</UL><UL>
+<H2>       to prepare("insert … ?")and looped execute($id)
+</H2>
+</UL><UL>
+<LI><H2>This often gives a significant performance boost</H2>
+</UL></P>
 <P></P> 
 <P>
 <TABLE>
@@ -41,51 +48,7 @@
 <BR>
 </P>
 
- <FONT size=4><STRONG> Notes: </FONT></STRONG>
-  <HR SIZE=3> <P> <UL>
-Once upon a time:
-</UL><UL>
-	Perl4: oraperl, ingperl, uniperl, fooperl
-</UL><UL>
-	Ted Lemon: “Wouldn’t it be nice if” - Sept 29th 1992
-</UL><UL>
-	Applications portable between databases
-</UL><UL>
-	Skills portable between databases!
-</UL><UL>
-A vision of the future - Talk, talk, talk- the dbperl-interest mailing list
-</UL><UL>
-	 Buzz Moschetti, Kevin Stock, Kurt Andersen, Ted Lemon
-</UL><UL>
-	June 93:
-</UL><UL>
-		Kevin and Kurt changed jobs and left the list.
-</UL><UL>
-		30 people on the list. I took the lead at that point.
-</UL><UL>
-Jan 1994:
-</UL><UL>
-	Dbperl spec is progressing and Perl 5 appears on the horizon
-</UL><UL>
-June 1994:
-</UL><UL>
-	Perl 5 alpha releases becoming stable. Almost 200 people on list.
-</UL><UL>
-	Prototype pure-perl ‘testbed’ released for experimentation.
-</UL><UL>
-Sept 1994 (Two years and 600 messages - 2MB - later...):
-</UL><UL>
-	Renamed to DBI and DBD.
-</UL><UL>
-	First release of the DBI (with a pure-perl driver)
-</UL><UL>
 
-</UL><UL>
-The future is now:
-</UL><UL>
-	continuous development
-</UL><UL>
-	interface stabilizing and more fully documented</UL> </P> 
 
 </Body>
 </HTML>

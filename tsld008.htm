@@ -2,48 +2,30 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Defining the Output Format</TITLE> 
+ <TITLE>Prepare for speed</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Defining the Output Format</H1> 
+ <H1>Prepare for speed</H1> 
  <P><UL>
-<H2>format STDOUT_TOP =
+<LI><H2>prepare() - what happens in the server...
 </H2>
-</UL><UL>
-<H2>Code   Price    Notes
-</H2>
-</UL><UL>
-<H2>----   -------  --------
-</H2>
-</UL><UL>
-<H2>.
-</H2>
-</UL><UL>
-<H2>
-</H2>
-</UL><UL>
-<H2>format STDOUT =
-</H2>
-</UL><UL>
-<H2>@&#062&#062&#062   ^###.##  ^&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060
-</H2>
-</UL><UL>
-<H2>$prod, $cost,   $note
-</H2>
-</UL><UL>
-<H2>~~              ^&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060
-</H2>
-</UL><UL>
-<H2>                $note
-</H2>
-</UL><UL>
-<H2>.
-</H2>
-</UL></P>
+<UL>
+<LI>Receive and parse the SQL statement into internal form
+<LI>Get details for all the selected tables
+<LI>Check access rights for each
+<LI>Get details for all the selected fields
+<LI>Check data types in expressions
+<LI>Get details for all the indices on all the tables
+<LI>Develop an optimised query 'access plan' for best execution
+<LI>Return a handle for all this cached information
+</UL><LI>This can be an expensive process
+<UL>
+<LI>especially the 'access plan’ for a complex multi-table query
+</UL><LI>Some databases, like MySQL, don't cache the information but have simpler, and thus faster, plan creation</UL></P>
 <P></P> 
 <P>
 <TABLE>
@@ -55,13 +37,7 @@
 <BR>
 </P>
 
- <FONT size=4><STRONG> Notes: </FONT></STRONG>
-  <HR SIZE=3> <P> <UL>
-Here we use perl’s built-in formatting mechanism to define the top of page headers and the layout and formatting of the body rows.
-</UL><UL>
 
-</UL><UL>
-Again: very few lines of code and just about every line directly related to the task.</UL> </P> 
 
 </Body>
 </HTML>

@@ -2,15 +2,15 @@
 <html>
 
 <head>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
-<title>IntegratingPerl and Databases</title>
+<title>Advanced DBI</title>
 </head>
 
 <BODY     >
 <CENTER>
-<h1>IntegratingPerl and Databases</h1>
-<h4>7/11/98</h4>
+<h1>Advanced DBI</h1>
+<h4>17/07/00</h4>
 <br><h2> <A HREF="sld001.htm">Click here to start</A>
  </h2><br>  
 </center>
@@ -19,45 +19,80 @@
   <tr>
    <td valign=top align=left width=50%>
       <h3><u>Table of Contents</u></h3>
-            <P ALIGN=LEFT><A HREF="sld001.htm">IntegratingPerl and Databases</A></P>
-        <P ALIGN=LEFT><A HREF="sld002.htm">Why?</A></P>
-        <P ALIGN=LEFT><A HREF="sld003.htm">Why Perl?</A></P>
-        <P ALIGN=LEFT><A HREF="sld004.htm">Why Perl for Databases?</A></P>
-        <P ALIGN=LEFT><A HREF="sld005.htm">Your Mission...</A></P>
-        <P ALIGN=LEFT><A HREF="sld006.htm">The Task</A></P>
-        <P ALIGN=LEFT><A HREF="sld007.htm">Reading the CSV file</A></P>
-        <P ALIGN=LEFT><A HREF="sld008.htm">Defining the Output Format</A></P>
-        <P ALIGN=LEFT><A HREF="sld009.htm">Writing the New Report</A></P>
-        <P ALIGN=LEFT><A HREF="sld010.htm">Mission Accomplished!</A></P>
-        <P ALIGN=LEFT><A HREF="sld011.htm">Changeis the only Constant</A></P>
-        <P ALIGN=LEFT><A HREF="sld012.htm">“Cache the data for other uses!”</A></P>
-        <P ALIGN=LEFT><A HREF="sld013.htm">“Update the Prices in a Database!”</A></P>
-        <P ALIGN=LEFT><A HREF="sld014.htm">“Now get Cost Data from a Database!”</A></P>
-        <P ALIGN=LEFT><A HREF="sld015.htm">What Is the Perl DBI?</A></P>
-        <P ALIGN=LEFT><A HREF="sld016.htm">Why the Perl DBI?</A></P>
-        <P ALIGN=LEFT><A HREF="sld017.htm">Making simple things easyand difficult things possible</A></P>
-        <P ALIGN=LEFT><A HREF="sld018.htm">Getting Technical...</A></P>
-        <P ALIGN=LEFT><A HREF="sld019.htm">Under the Hood</A></P>
-        <P ALIGN=LEFT><A HREF="sld020.htm">A Picture is Worth...</A></P>
-        <P ALIGN=LEFT><A HREF="sld021.htm">State of the Nation</A></P>
-        <P ALIGN=LEFT><A HREF="sld022.htm">What Next?</A></P>
-        <P ALIGN=LEFT><A HREF="sld023.htm">Comparing DBI and Alternatives(Attempting the Impossible!)</A></P>
-        <P ALIGN=LEFT><A HREF="sld024.htm">So why use the Perl DBI?</A></P>
-        <P ALIGN=LEFT><A HREF="sld025.htm">So What?</A></P>
-        <P ALIGN=LEFT><A HREF="sld026.htm">Success Stories in Industry</A></P>
-        <P ALIGN=LEFT><A HREF="sld027.htm">Too Good to Be True?</A></P>
-        <P ALIGN=LEFT><A HREF="sld028.htm">And finally...</A></P>
-        <P ALIGN=LEFT><A HREF="sld029.htm">The end.</A></P>
+            <P ALIGN=LEFT><A HREF="sld001.htm">Advanced DBI</A></P>
+        <P ALIGN=LEFT><A HREF="sld002.htm">Topical Topics</A></P>
+        <P ALIGN=LEFT><A HREF="sld003.htm">What’s it all about?</A></P>
+        <P ALIGN=LEFT><A HREF="sld004.htm">A picture is worth?</A></P>
+        <P ALIGN=LEFT><A HREF="sld005.htm">Speed    Speed    Speed!</A></P>
+        <P ALIGN=LEFT><A HREF="sld006.htm">Give me speed!</A></P>
+        <P ALIGN=LEFT><A HREF="sld007.htm">Partition for speed</A></P>
+        <P ALIGN=LEFT><A HREF="sld008.htm">Prepare for speed</A></P>
+        <P ALIGN=LEFT><A HREF="sld009.htm">How would you do it?</A></P>
+        <P ALIGN=LEFT><A HREF="sld010.htm">The best laid plans</A></P>
+        <P ALIGN=LEFT><A HREF="sld011.htm">MySQL’s EXPLAIN PLAN</A></P>
+        <P ALIGN=LEFT><A HREF="sld012.htm">Oracle’s EXPLAIN PLAN</A></P>
+        <P ALIGN=LEFT><A HREF="sld013.htm">PPT Slide</A></P>
+        <P ALIGN=LEFT><A HREF="sld014.htm">Changing plans (hint hint)</A></P>
+        <P ALIGN=LEFT><A HREF="sld015.htm">Respect your server's SQL cache</A></P>
+        <P ALIGN=LEFT><A HREF="sld016.htm">Hot handles</A></P>
+        <P ALIGN=LEFT><A HREF="sld017.htm">Summary (so far)</A></P>
+        <P ALIGN=LEFT><A HREF="sld018.htm">Let the DBI cache your handles</A></P>
+        <P ALIGN=LEFT><A HREF="sld019.htm">Another prepare_cached() example</A></P>
+        <P ALIGN=LEFT><A HREF="sld020.htm">Keep a handle on your databases</A></P>
+        <P ALIGN=LEFT><A HREF="sld021.htm">A connect_cached() example</A></P>
+        <P ALIGN=LEFT><A HREF="sld022.htm">Sling less for speed</A></P>
+        <P ALIGN=LEFT><A HREF="sld023.htm">Error Checking & Error Handling</A></P>
+        <P ALIGN=LEFT><A HREF="sld024.htm">The importance of error checking</A></P>
+        <P ALIGN=LEFT><A HREF="sld025.htm">Error checking - ways and means</A></P>
+        <P ALIGN=LEFT><A HREF="sld026.htm">Handling errors the smart way</A></P>
+        <P ALIGN=LEFT><A HREF="sld027.htm">Handling errors the smart way</A></P>
+        <P ALIGN=LEFT><A HREF="sld028.htm">Wheels within Wheels</A></P>
+        <P ALIGN=LEFT><A HREF="sld029.htm">Setting the scene</A></P>
+        <P ALIGN=LEFT><A HREF="sld030.htm">Architecture of the DBI classes #1</A></P>
+        <P ALIGN=LEFT><A HREF="sld031.htm">Architecture of the DBI classes #2</A></P>
+        <P ALIGN=LEFT><A HREF="sld032.htm">Anatomy of a DBI handle</A></P>
+        <P ALIGN=LEFT><A HREF="sld033.htm">Method call walk-through</A></P>
+        <P ALIGN=LEFT><A HREF="sld034.htm">Watching the DBI in action</A></P>
+        <P ALIGN=LEFT><A HREF="sld035.htm">Enabling tracing</A></P>
+        <P ALIGN=LEFT><A HREF="sld036.htm">Our program for today...</A></P>
+        <P ALIGN=LEFT><A HREF="sld037.htm">Trace level 1</A></P>
+        <P ALIGN=LEFT><A HREF="sld038.htm">Trace level 2 and above</A></P>
+        <P ALIGN=LEFT><A HREF="sld039.htm">Transactions</A></P>
+        <P ALIGN=LEFT><A HREF="sld040.htm">Transactions - What's it all about? </A></P>
+        <P ALIGN=LEFT><A HREF="sld041.htm">Transactions - Life Preserving</A></P>
+        <P ALIGN=LEFT><A HREF="sld042.htm">Transactions - How the DBI helps</A></P>
+        <P ALIGN=LEFT><A HREF="sld043.htm">Transactions - Example code</A></P>
+        <P ALIGN=LEFT><A HREF="sld044.htm">Transactions - Further comments</A></P>
+        <P ALIGN=LEFT><A HREF="sld045.htm">DBI for the Web</A></P>
+        <P ALIGN=LEFT><A HREF="sld046.htm">Web DBI - Connect speed</A></P>
+        <P ALIGN=LEFT><A HREF="sld047.htm">Web DBI - Too many connections</A></P>
+        <P ALIGN=LEFT><A HREF="sld048.htm">Web DBI - State-less-ness</A></P>
+        <P ALIGN=LEFT><A HREF="sld049.htm">Web DBI - Browsing pages of results</A></P>
+        <P ALIGN=LEFT><A HREF="sld050.htm">Web DBI - Concurrent editing</A></P>
+        <P ALIGN=LEFT><A HREF="sld051.htm">Web DBI - Tips for the novice</A></P>
+        <P ALIGN=LEFT><A HREF="sld052.htm">DBI security tainting</A></P>
+        <P ALIGN=LEFT><A HREF="sld053.htm">Handling LONG/BLOB data</A></P>
+        <P ALIGN=LEFT><A HREF="sld054.htm">Portability</A></P>
+        <P ALIGN=LEFT><A HREF="sld055.htm">Portability in practice</A></P>
+        <P ALIGN=LEFT><A HREF="sld056.htm">The Power of the Proxy</A></P>
+        <P ALIGN=LEFT><A HREF="sld057.htm">DBD::Proxy & DBI::ProxyServer</A></P>
+        <P ALIGN=LEFT><A HREF="sld058.htm">A Proxy Picture</A></P>
+        <P ALIGN=LEFT><A HREF="sld059.htm">Thin clients and other buzz words</A></P>
+        <P ALIGN=LEFT><A HREF="sld060.htm">The practical realities</A></P>
+        <P ALIGN=LEFT><A HREF="sld061.htm">Flexing the Multiplex</A></P>
+        <P ALIGN=LEFT><A HREF="sld062.htm">DBD::Multiplex</A></P>
+        <P ALIGN=LEFT><A HREF="sld063.htm">Reference Materials</A></P>
+        <P ALIGN=LEFT><A HREF="sld064.htm">The end.</A></P>
 
    </td>
    <td valign=top width=50%>
 	 <strong>Author: </strong>Tim Bunce 
-     <P> <strong>Email: </strong> <A HREF="MAILTO:dbi-users@fugue.com">dbi-users@fugue.com</A> </P> 
+    
 	
 	
 	
 	
-	 <P><A HREF="pc1dbi19.ppt"> Download presentation source </A> 
+	 <P><A HREF="DBI_Talk4_2000.PPT"> Download presentation source </A> 
    </td>
   </tr>
  </table>

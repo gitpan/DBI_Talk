@@ -2,41 +2,30 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Reading the CSV file</TITLE> 
+ <TITLE>Partition for speed</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Reading the CSV file</H1> 
+ <H1>Partition for speed</H1> 
  <P><UL>
-<H2>open MARGIN, “&#060margin.csv” or die “open margin.csv: $!”;
+<LI><H2>Application partitioning
 </H2>
-</UL><UL>
-<H2>while (&#060MARGIN&#062) {
-</H2>
-</UL><UL>
-<H2>    chop;
-</H2>
-</UL><UL>
-<H2>
-</H2>
-</UL><UL>
-<H2>    ($prod, $margin, $notes) = split /,/;
-</H2>
-</UL><UL>
-<H2>
-</H2>
-</UL><UL>
-<H2>    $prod_margin{$prod} = $margin;
-</H2>
-</UL><UL>
-<H2>    $prod_notes{$prod}  = $notes;
-</H2>
-</UL><UL>
-<H2>}</H2>
-</UL></P>
+<UL>
+<LI>do what where? - stop and think - work smarter not harder
+</UL><LI>Pick the right database for the job, if you have the choice.
+<LI>Work close to the data
+<UL>
+<LI>Moving data to/from the client is always expensive
+<LI>Consider latency as well as bandwidth
+<LI>Use stored procedures where appropriate
+<LI>Do more in SQL where appropriate - get a good book
+</UL><LI>Multiple simple queries with 'joins' in Perl may be faster.
+<LI>Use proprietary bulk-load, not Perl, where appropriate.
+<LI>Consider local caching, in memory or DBM file etc.
+<LI>Mix 'n Match techniques as needed - experiment and benchmark.</UL></P>
 <P></P> 
 <P>
 <TABLE>
@@ -48,22 +37,7 @@
 <BR>
 </P>
 
- <FONT size=4><STRONG> Notes: </FONT></STRONG>
-  <HR SIZE=3> <P> <UL>
-Very few lines of code.
-</UL><UL>
-Just about every line directly related to the task.
-</UL><UL>
 
-</UL><UL>
-Not the best code in the world but it gets the job done.
-</UL><UL>
-(The split could be replaced with two lines of code to do the right thing
-</UL><UL>
-with quoted fields and embedded commas, for example.)
-</UL><UL>
-
-</UL> </P> 
 
 </Body>
 </HTML>

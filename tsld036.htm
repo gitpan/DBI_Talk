@@ -1,0 +1,63 @@
+
+<HTML>
+
+<HEAD>
+
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>Our program for today...</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>Our program for today...</H1> 
+ <P><UL>
+<H2> 1: #!/usr/bin/perl -w
+</H2>
+</UL><UL>
+<H2> 2:
+</H2>
+</UL><UL>
+<H2> 3: use DBI;
+</H2>
+</UL><UL>
+<H2> 4:
+</H2>
+</UL><UL>
+<H2> 5: $dbh = DBI-&#062connect('', '', '', { RaiseError =&#062 1 });
+</H2>
+</UL><UL>
+<H2> 6:
+</H2>
+</UL><UL>
+<H2> 7: $upd = $dbh-&#062prepare("UPDATE prices SET price=? WHERE prod_id=?");
+</H2>
+</UL><UL>
+<H2> 8: $ins = $dbh-&#062prepare("INSERT INTO prices (prod_id,price) VALUES(?,?)");
+</H2>
+</UL><UL>
+<H2> 9: $rows = $upd-&#062execute(42, "Widgets");
+</H2>
+</UL><UL>
+<H2>10: $ins-&#062execute("Widgets", 42) if $rows == 0;
+</H2>
+</UL><UL>
+<H2>11:
+</H2>
+</UL><UL>
+<H2>12: $dbh-&#062disconnect;</H2>
+</UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld035.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld037.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld036.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+
+
+</Body>
+</HTML>

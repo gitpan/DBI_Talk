@@ -3,9 +3,9 @@
 
 <HTML>
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Writing the New Report</TITLE> 
+ <TITLE>How would you do it?</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -13,73 +13,53 @@
 <CENTER>
 <TABLE WIDTH=100%> 
      <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <IMG SRC="img009.gif" usemap="#Objmap" WIDTH=600 HEIGHT=450 BORDER=0>
+         <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
+         <A HREF="sld008.htm">Previous</A>&nbsp;&nbsp;
+         <A HREF="sld010.htm">Next</A>&nbsp;&nbsp;
+         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+&nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="tsld009.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <A HREF="sld001.htm"><IMG SRC="first.gif" BORDER=0 ALT="First"></A>
-         <A HREF="sld008.htm"><IMG SRC="prev.gif" BORDER=0 ALT="Previous"></A>
-         <A HREF="sld010.htm"><IMG SRC="next.gif" BORDER=0 ALT="Next"></A>
-         <A HREF="sld029.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
-         <IMG SRC="space.gif" BORDER=0>
-         <A HREF="index.htm"><IMG SRC="info.gif" BORDER=0 ALT="Index"></A>
-         <A HREF="tsld009.htm"><IMG SRC="text.gif" BORDER=0 ALT="Text"></A>
+         <IMG SRC="img009.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 9 of 29</P>
+<P>Slide 9 of 64</P>
 </CENTER>
-
- <CENTER><Font size=4> <STRONG> Notes:  </FONT></STRONG><HR SIZE=3></CENTER><P> <UL>
-Here we read each line from the costs text file,
-</UL><UL>
-skip lines that don't start with digits,
-</UL><UL>
-extract the product and cost,
-</UL><UL>
-apply the margin (or a default),
-</UL><UL>
-apply the note (or a default),
-</UL><UL>
-and write the output.
-</UL><UL>
-
-</UL><UL>
-Again: very few lines of code and just about every line directly related to the task.
-</UL> </P> 
 <!-- <UL>
-<H2>Writing the New Report</H2>
+<H2>How would you do it?</H2>
 </UL></P>
 <P><UL>
-<H2>open COST, "&#060cost.txt" or die "open cost.txt: $!";
-</H2>
-</UL><UL>
-<H2>while ($line = &#060COST&#062) {
-</H2>
-</UL><UL>
-<H2>    next unless $line =~ m/^\d/;
+<H2>SELECT * FROM t1, t2  WHERE t1.key=1 AND t2.key=2 AND t1.value=t2.value
 </H2>
 </UL><UL>
 <H2>
 </H2>
 </UL><UL>
-<H2>    ($prod, $cost) = unpack 'A4 @20 A7', $line;
+<LI><H2>One possible approach:
+</H2>
+<UL>
+  Select from one table using the key field
+<BR><BR>  Then, loop for each row returned, and...
+<BR>	  select from the other table using its key field and the current row’s value field
+</UL></UL><UL>
+<LI><H2>But which table to select first?
+</H2>
+<UL>
+  To keep it simple, assume that both tables have the same value in all rows
+<BR></UL></UL><UL>
+<LI><H2>If we know that t1.key=1 matches 1000 rows and t2.key=2 matches 1
 </H2>
 </UL><UL>
-<H2>
+<LI><H2>Then we know that we should select from t2 first
+</H2>
+<UL>
+  because that way we only have to select from each table once
+<BR></UL></UL><UL>
+<LI><H2>If we selected from t1 first then we’d have to select from t2 1000 times!
 </H2>
 </UL><UL>
-<H2>    $cost *= $prod_margin{$prod} || 1.10;
-</H2>
-</UL><UL>
-<H2>    $note  = $prod_notes{$prod}  || 'n/a';
-</H2>
-</UL><UL>
-<H2>
-</H2>
-</UL><UL>
-<H2>    write;  # using format with $prod, $cost and $note
-</H2>
-</UL><UL>
-<H2>}
+<LI><H2>An alternative approach would be to select from both and merge
 </H2>
 </UL></P>
 <P>  -->

@@ -2,16 +2,31 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Getting Technical...</TITLE> 
+ <TITLE>Let the DBI cache your handles</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Getting Technical...</H1> 
+ <H1>Let the DBI cache your handles</H1> 
  <P><UL>
-<H2>for the techies...</H2>
+<LI><H2>Sometimes it's not easy to hold all your handles
+</H2>
+<UL>
+<LI>e.g., library code to lookup values from the database
+<LI>
+</UL></UL><UL>
+<LI><H2>The prepare_cached() method gives you a client side statement handle cache:
+</H2>
+<UL>
+sub lookup_foo {
+<BR><BR>    my ($dbh, $id) = @_;
+<BR>    $sth = $dbh-&#062prepare_cached("select foo from table where id=?");
+<BR>    return $dbh-&#062selectrow_array($sth, $id);
+<BR>}
+</UL></UL><UL>
+<LI><H2>Can avoid the need for global statement handle variables</H2>
 </UL></P>
 <P></P> 
 <P>

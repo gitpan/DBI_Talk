@@ -2,57 +2,40 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>“Now get Cost Data from a Database!”</TITLE> 
+ <TITLE>Changing plans (hint hint)</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>“Now get Cost Data from a Database!”</H1> 
+ <H1>Changing plans (hint hint)</H1> 
  <P><UL>
-<LI><H2>Original Code 
+<LI><H2>Most database systems provide some way to influence the execution plan - typically via ‘hints’
 </H2>
 </UL><UL>
-<H2>
+<LI><H2>Oracle supports a very large and complex range of hints
 </H2>
-</UL><UL>
-<H2>open COST, "&#060cost.txt" or die "open cost.txt: $!";
+<UL>
+<LI>Hints must be contained within comments /*+ … */
+<UL>
+	
+<BR></UL></UL></UL><UL>
+<H2>		SELECT /*+ INDEX(table1 index1) */ foo, bar
 </H2>
-</UL><UL>
-<H2>while ($line = &#060COST&#062) {
+<UL>
+		FROM table1 WHERE key1=1 AND key2=2 AND key3=3;
+<BR></UL></UL><UL>
+<LI><H2>MySQL has a very limited set of hints
 </H2>
-</UL><UL>
-<H2>    next unless $line =~ m/^\d/;
+<UL>
+<LI>Hints can optionally be placed inside comments /*! … */
+</UL></UL><UL>
+<H2>		SELECT foo, bar FROM table1 /*! USE INDEX (key1,key2) */
 </H2>
-</UL><UL>
-<H2>    ($prod, $cost) = unpack 'A4 @20 A7', $line;
-</H2>
-</UL><UL>
-<H2>    . . .
-</H2>
-</UL><UL>
-<H2>
-</H2>
-</UL><UL>
-<LI><H2>New Code 
-</H2>
-</UL><UL>
-<H2>$costs = $cost_db-&#062prepare('SELECT prod,cost FROM costs');
-</H2>
-</UL><UL>
-<H2>$costs-&#062execute;
-</H2>
-</UL><UL>
-<H2>while ( ($prod, $cost) = $costs-&#062fetchrow_array ) {
-</H2>
-</UL><UL>
-<H2>    . . .
-</H2>
-</UL><UL>
-<LI><H2>
-</H2>
-</UL></P>
+<UL>
+		WHERE key1=1 AND key2=2 AND key3=3;
+<BR></UL></UL></P>
 <P></P> 
 <P>
 <TABLE>
@@ -64,10 +47,7 @@
 <BR>
 </P>
 
- <FONT size=4><STRONG> Notes: </FONT></STRONG>
-  <HR SIZE=3> <P> <UL>
-Here we have changed just 4 lines to fetch the costs from the database.
-</UL> </P> 
+
 
 </Body>
 </HTML>

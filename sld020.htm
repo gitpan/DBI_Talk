@@ -3,9 +3,9 @@
 
 <HTML>
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>A Picture is Worth...</TITLE> 
+ <TITLE>Keep a handle on your databases</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -13,39 +13,41 @@
 <CENTER>
 <TABLE WIDTH=100%> 
      <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <IMG SRC="img020.gif" usemap="#Objmap" WIDTH=600 HEIGHT=450 BORDER=0>
+         <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
+         <A HREF="sld019.htm">Previous</A>&nbsp;&nbsp;
+         <A HREF="sld021.htm">Next</A>&nbsp;&nbsp;
+         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+&nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="tsld020.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <A HREF="sld001.htm"><IMG SRC="first.gif" BORDER=0 ALT="First"></A>
-         <A HREF="sld019.htm"><IMG SRC="prev.gif" BORDER=0 ALT="Previous"></A>
-         <A HREF="sld021.htm"><IMG SRC="next.gif" BORDER=0 ALT="Next"></A>
-         <A HREF="sld029.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
-         <IMG SRC="space.gif" BORDER=0>
-         <A HREF="index.htm"><IMG SRC="info.gif" BORDER=0 ALT="Index"></A>
-         <A HREF="tsld020.htm"><IMG SRC="text.gif" BORDER=0 ALT="Text"></A>
+         <IMG SRC="img020.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 20 of 29</P>
+<P>Slide 20 of 64</P>
 </CENTER>
 <!-- <UL>
-<H2>A Picture is Worth...</H2>
+<H2>Keep a handle on your databases</H2>
 </UL></P>
 <P><UL>
-DBI Module</UL></P>
-<P><UL>
-Perl Application</UL></P>
-<P><UL>
-DBD::Other</UL></P>
-<P><UL>
-DBD::Informix</UL></P>
-<P><UL>
-DBD::Oracle</UL></P>
-<P><UL>
-Oracle Server</UL></P>
-<P><UL>
-Informix Server</UL></P>
-<P><UL>
-Other Server</UL></P>
+<LI><H2>Connecting to a database can be slow
+</H2>
+</UL><UL>
+<LI><H2>Try to connect once and stay connected where practical
+</H2>
+<UL>
+<LI>We'll discuss web server issues later
+</UL></UL><UL>
+<LI><H2>The connect_cached() method
+</H2>
+<UL>
+<LI>Acts like prepare_cached() but for database handles
+<LI>It also checks the connection and reconnects if it's broken
+<LI>Like prepare_cached(), it’s most handy for library code
+<LI>Similar, but not quite the same as Apache::DBI
+<LI>New and subject to change with experience
+<LI>Potentially most useful with DBD::Proxy & DBI::ProxyServer
+<LI>Works well combined with prepare_cached()</UL></UL></P>
 <P>  -->
 </Body>
 </HTML>

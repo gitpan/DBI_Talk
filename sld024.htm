@@ -3,9 +3,9 @@
 
 <HTML>
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>So why use the Perl DBI?</TITLE> 
+ <TITLE>The importance of error checking</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -13,54 +13,39 @@
 <CENTER>
 <TABLE WIDTH=100%> 
      <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <IMG SRC="img024.gif" usemap="#Objmap" WIDTH=600 HEIGHT=450 BORDER=0>
+         <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
+         <A HREF="sld023.htm">Previous</A>&nbsp;&nbsp;
+         <A HREF="sld025.htm">Next</A>&nbsp;&nbsp;
+         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+&nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="tsld024.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <A HREF="sld001.htm"><IMG SRC="first.gif" BORDER=0 ALT="First"></A>
-         <A HREF="sld023.htm"><IMG SRC="prev.gif" BORDER=0 ALT="Previous"></A>
-         <A HREF="sld025.htm"><IMG SRC="next.gif" BORDER=0 ALT="Next"></A>
-         <A HREF="sld029.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
-         <IMG SRC="space.gif" BORDER=0>
-         <A HREF="index.htm"><IMG SRC="info.gif" BORDER=0 ALT="Index"></A>
-         <A HREF="tsld024.htm"><IMG SRC="text.gif" BORDER=0 ALT="Text"></A>
+         <IMG SRC="img024.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 24 of 29</P>
+<P>Slide 24 of 64</P>
 </CENTER>
-
- <CENTER><Font size=4> <STRONG> Notes:  </FONT></STRONG><HR SIZE=3></CENTER><P> <UL>
-It delivers what it promises
-<BR>It works!
-<BR>
-<BR>It’s here, there and everywhere
-<BR>Portable and widely ported
-<BR>
-<BR>It’s fast, flexible and well proven
-</UL><UL>
-    Thousands of users
-</UL><UL>
-
-<UL>
-It’s free, with source
-<BR><BR>on the same terms as Perl itself
-<BR>
-<BR>Commercial support is available
-<BR>From www.perlclinic.com or www.ig.co.uk
-<BR>
-<BR>It has a large user base and a strong future</UL></UL> </P> 
 <!-- <UL>
-<H2>So why use the Perl DBI?</H2>
+<H2>The importance of error checking</H2>
 </UL></P>
 <P><UL>
-<LI><H2>Because...
+<LI><H2>Errors happen!
 </H2>
 <UL>
-<LI>It delivers what it promises
-<LI>It’s here, there and everywhere
-<LI>It’s fast, flexible and well proven
-<LI>It’s free, with source
-<LI>Commercial support is available
-<LI>It has a large user base and a strong future</UL></UL></P>
+<LI>Failure happens when you don't expect errors!
+<UL>
+<LI>database crash / network disconnection
+<LI>lack of disk space for insert or select (sort space for order by)
+<LI>server math error on select (divide by zero after 10,000 rows)
+<LI>and maybe, just maybe, errors in your own code [Gasp!]
+<LI>
+</UL><LI>Beat failure by expecting errors!
+<LI>
+<LI>Detect errors early to limit effects
+<UL>
+<LI>Defensive Programming, e.g., check assumptions
+<LI>Through Programming, e.g., check for errors after fetch loops</UL></UL></UL></P>
 <P>  -->
 </Body>
 </HTML>

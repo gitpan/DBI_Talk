@@ -2,32 +2,29 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Under the Hood</TITLE> 
+ <TITLE>Another prepare_cached() example</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Under the Hood</H1> 
+ <H1>Another prepare_cached() example</H1> 
  <P><UL>
-<LI><H2>DBI defines and implements an interface
+<LI><H2>Handy for dynamically constructed statements:
 </H2>
 </UL><UL>
-<LI><H2>Driver modules do much of the real work
+<LI><H2>
 </H2>
-</UL><UL>
-<LI><H2>DBI provides default methods, functions, tools etc  for drivers
-</H2>
-</UL><UL>
-<LI><H2>Not limited to the lowest common denominator -  mechanism provided for driver specific extensions
-</H2>
-</UL><UL>
-<LI><H2>Designed and built for speed
-</H2>
-</UL><UL>
-<LI><H2>Valuable detailed call tracing/debugging built-in</H2>
-</UL></P>
+<UL>
+  while ( ($field, $value) = each %search_fields ) {
+<BR><BR>      push @sql,   "$field = ?";
+<BR>      push @values, $value;
+<BR>  }
+<BR>  $where = "";
+<BR>  $where = "where ".join(" and ", @sql) if @sql;
+<BR>  $sth = $dbh-&#062prepare_cached("select * from table $where");
+<BR>  $sth-&#062execute(@values);</UL></UL></P>
 <P></P> 
 <P>
 <TABLE>
@@ -39,19 +36,7 @@
 <BR>
 </P>
 
- <FONT size=4><STRONG> Notes: </FONT></STRONG>
-  <HR SIZE=3> <P> <UL>
-Similar in concept to an ODBC Driver Manager
-</UL><UL>
 
-</UL><UL>
-DBI provided methods, functions and tools etc
-</UL><UL>
-	help ensure conformant implementations
-</UL><UL>
-	and efficient implementations
-</UL><UL>
-	and more automatic support for new features</UL> </P> 
 
 </Body>
 </HTML>

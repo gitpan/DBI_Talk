@@ -2,26 +2,42 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Making simple things easy</TITLE> 
+ <TITLE>Summary (so far)</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Making simple things easyand difficult things possible</H1> 
+ <H1>Summary (so far)</H1> 
  <P><UL>
-<LI><H2>Goals
+<LI><H2>Think about the big picture first
 </H2>
 <UL>
-<LI>Be simple to use for simple applications
-<LI>Have sufficient flexibility to accommodate unusual functionality and non-SQL databases
-<LI>Conform to applicable standards (ODBC etc.)
-<LI>Enable the creation of database-independent Perl scripts without being limited to the lowest functionality
-<LI>Be free.
-</UL></UL><UL>
-<LI><H2>A ‘higher-level’ interface than ODBC/JDBC</H2>
-</UL></P>
+	Partitioning, choice of tools etc
+<BR></UL></UL><UL>
+<LI><H2>Study and tune the access plans for your statements
+</H2>
+<UL>
+	Teach your database about your key distributions
+<BR></UL></UL><UL>
+<LI><H2>Use placeholders
+</H2>
+<UL>
+	Especially for any statements that vary and will be executed often
+<BR></UL></UL><UL>
+<LI><H2>Replace do() in a loop
+</H2>
+<UL>
+	with prepare() before the loop and execute() within it
+<BR></UL></UL><UL>
+<LI><H2>Usually…
+</H2>
+<UL>
+<LI>some drivers don’t support placeholders
+<LI>sometimes queries using placeholders are slower
+<UL>
+<LI>because access plan has to be more general</UL></UL></UL></P>
 <P></P> 
 <P>
 <TABLE>

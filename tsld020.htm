@@ -2,30 +2,33 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>A Picture is Worth...</TITLE> 
+ <TITLE>Keep a handle on your databases</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>A Picture is Worth...</H1> 
+ <H1>Keep a handle on your databases</H1> 
  <P><UL>
-DBI Module</UL></P>
-<P><UL>
-Perl Application</UL></P>
-<P><UL>
-DBD::Other</UL></P>
-<P><UL>
-DBD::Informix</UL></P>
-<P><UL>
-DBD::Oracle</UL></P>
-<P><UL>
-Oracle Server</UL></P>
-<P><UL>
-Informix Server</UL></P>
-<P><UL>
-Other Server</UL></P>
+<LI><H2>Connecting to a database can be slow
+</H2>
+</UL><UL>
+<LI><H2>Try to connect once and stay connected where practical
+</H2>
+<UL>
+<LI>We'll discuss web server issues later
+</UL></UL><UL>
+<LI><H2>The connect_cached() method
+</H2>
+<UL>
+<LI>Acts like prepare_cached() but for database handles
+<LI>It also checks the connection and reconnects if it's broken
+<LI>Like prepare_cached(), it’s most handy for library code
+<LI>Similar, but not quite the same as Apache::DBI
+<LI>New and subject to change with experience
+<LI>Potentially most useful with DBD::Proxy & DBI::ProxyServer
+<LI>Works well combined with prepare_cached()</UL></UL></P>
 <P></P> 
 <P>
 <TABLE>

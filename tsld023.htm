@@ -2,53 +2,20 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Comparing DBI and Alternatives</TITLE> 
+ <TITLE>Error Checking & Error Handling</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Comparing DBI and Alternatives(Attempting the Impossible!)</H1> 
+ <H1>Error Checking & Error Handling</H1> 
  <P><UL>
-“Power”</UL></P>
-<P><UL>
-“Effort”</UL></P>
-<P><UL>
-Command Line</UL></P>
-<P><UL>
-Native API</UL></P>
-<P><UL>
-ODBC/
+<H2>To err is human,
+</H2>
 </UL><UL>
-JDBC
-</UL><UL>
-and
-</UL><UL>
-drivers</UL></P>
-<P><UL>
-DBI
-</UL><UL>
-and
-</UL><UL>
-Drivers
-</UL><UL>
-
-</UL><UL>
-
+<H2>to detect, divine.</H2>
 </UL></P>
-<P><UL>
-Precompilers</UL></P>
-<P><UL>
-Win32::ODBC</UL></P>
-<P><UL>
-TCL
-</UL><UL>
-(oratcl, sybtcl)</UL></P>
-<P><UL>
-Please note: This chart is correct only for some values of correct!</UL></P>
-<P><UL>
-Sybase::DBlib</UL></P>
 <P></P> 
 <P>
 <TABLE>
@@ -60,43 +27,7 @@ Sybase::DBlib</UL></P>
 <BR>
 </P>
 
- <FONT size=4><STRONG> Notes: </FONT></STRONG>
-  <HR SIZE=3> <P> <UL>
-Native API’s will generally offer the most power, e.g., Oracle OCI.
-</UL><UL>
-	But take a lot of effort to learn and use.
-</UL><UL>
-	Knowledge is rarely portable to other APIs
-</UL><UL>
-Generic application language interfaces: ODBC and JDBC.
-</UL><UL>
-	Still lots of effort to learn
-</UL><UL>
-	Knowledge is portable to other APIs
-</UL><UL>
-	Power is dependant on quality of ODBC driver
-</UL><UL>
-Pre-compilers for C (where SQL is embedded in C and ‘precompiled’)
-</UL><UL>
-	Simpler than a raw C API but typically less power. Hard to debug.
-</UL><UL>
-Command line access - Just type it in!
-</UL><UL>
-	Generate SQL from scripts etc.
-</UL><UL>
-	Not robust - hard to check for and respond to errors
-</UL><UL>
-Script Languages
-</UL><UL>
-TCL (oratcl, sybtcl) generally much slower. Binary data hard.
-</UL><UL>
-Win32::ODBC - a bottom-up approach - thin layer over raw ODBC calls. DBI is higher level but DBD::ODBC doesn’t yet have the same breadth of ODBC specific functionality. Recommended for existing users and people who need that degree of control.
-</UL><UL>
-DBI+DBD::ODBC can run over twice as fast as Win32::ODBC.
-</UL><UL>
-Sybase - and other database specific perl extensions
-</UL><UL>
-	Can gain some performance advantage if well written but loose out on the DBI extras: portable apps & knowledge, tools, subclasses etc.</UL> </P> 
+
 
 </Body>
 </HTML>

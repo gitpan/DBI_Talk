@@ -2,20 +2,36 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>What Is the Perl DBI?</TITLE> 
+ <TITLE>Respect your server's SQL cache</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>What Is the Perl DBI?</H1> 
+ <H1>Respect your server's SQL cache</H1> 
  <P><UL>
-<LI><H2>The standard Database Interface for Perl			
+<LI><H2>Optimised Access Plan etc. is cached within the server
 </H2>
+<UL>
+<LI>keyed by the exact original SQL string used
+</UL><LI>
 </UL><UL>
-<LI><H2>“A perl module and specification that defines a consistent database interface independent of the actual database being used”</H2>
-</UL></P>
+<LI><H2>Compare	do("insert … $id");
+</H2>
+<UL>
+        with	do("insert … ?", undef, $id);
+<BR><UL>
+<LI>
+</UL></UL></UL><UL>
+<LI><H2>Without placeholders, SQL string varies each time
+</H2>
+<UL>
+<LI>so cached one is not reused
+<LI>so time is wasted creating a new access plan
+<LI>the new statement and access plan are added to cache
+<LI>so the cache fills and other statements get pushed out
+<LI>on a busy system this can lead to ‘thrashing’</UL></UL></P>
 <P></P> 
 <P>
 <TABLE>

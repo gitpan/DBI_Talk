@@ -3,9 +3,9 @@
 
 <HTML>
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Reading the CSV file</TITLE> 
+ <TITLE>Partition for speed</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -13,66 +13,38 @@
 <CENTER>
 <TABLE WIDTH=100%> 
      <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <IMG SRC="img007.gif" usemap="#Objmap" WIDTH=600 HEIGHT=450 BORDER=0>
+         <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
+         <A HREF="sld006.htm">Previous</A>&nbsp;&nbsp;
+         <A HREF="sld008.htm">Next</A>&nbsp;&nbsp;
+         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+&nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="tsld007.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <A HREF="sld001.htm"><IMG SRC="first.gif" BORDER=0 ALT="First"></A>
-         <A HREF="sld006.htm"><IMG SRC="prev.gif" BORDER=0 ALT="Previous"></A>
-         <A HREF="sld008.htm"><IMG SRC="next.gif" BORDER=0 ALT="Next"></A>
-         <A HREF="sld029.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
-         <IMG SRC="space.gif" BORDER=0>
-         <A HREF="index.htm"><IMG SRC="info.gif" BORDER=0 ALT="Index"></A>
-         <A HREF="tsld007.htm"><IMG SRC="text.gif" BORDER=0 ALT="Text"></A>
+         <IMG SRC="img007.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 7 of 29</P>
+<P>Slide 7 of 64</P>
 </CENTER>
-
- <CENTER><Font size=4> <STRONG> Notes:  </FONT></STRONG><HR SIZE=3></CENTER><P> <UL>
-Very few lines of code.
-</UL><UL>
-Just about every line directly related to the task.
-</UL><UL>
-
-</UL><UL>
-Not the best code in the world but it gets the job done.
-</UL><UL>
-(The split could be replaced with two lines of code to do the right thing
-</UL><UL>
-with quoted fields and embedded commas, for example.)
-</UL><UL>
-
-</UL> </P> 
 <!-- <UL>
-<H2>Reading the CSV file</H2>
+<H2>Partition for speed</H2>
 </UL></P>
 <P><UL>
-<H2>open MARGIN, “&#060margin.csv” or die “open margin.csv: $!”;
+<LI><H2>Application partitioning
 </H2>
-</UL><UL>
-<H2>while (&#060MARGIN&#062) {
-</H2>
-</UL><UL>
-<H2>    chop;
-</H2>
-</UL><UL>
-<H2>
-</H2>
-</UL><UL>
-<H2>    ($prod, $margin, $notes) = split /,/;
-</H2>
-</UL><UL>
-<H2>
-</H2>
-</UL><UL>
-<H2>    $prod_margin{$prod} = $margin;
-</H2>
-</UL><UL>
-<H2>    $prod_notes{$prod}  = $notes;
-</H2>
-</UL><UL>
-<H2>}</H2>
-</UL></P>
+<UL>
+<LI>do what where? - stop and think - work smarter not harder
+</UL><LI>Pick the right database for the job, if you have the choice.
+<LI>Work close to the data
+<UL>
+<LI>Moving data to/from the client is always expensive
+<LI>Consider latency as well as bandwidth
+<LI>Use stored procedures where appropriate
+<LI>Do more in SQL where appropriate - get a good book
+</UL><LI>Multiple simple queries with 'joins' in Perl may be faster.
+<LI>Use proprietary bulk-load, not Perl, where appropriate.
+<LI>Consider local caching, in memory or DBM file etc.
+<LI>Mix 'n Match techniques as needed - experiment and benchmark.</UL></P>
 <P>  -->
 </Body>
 </HTML>

@@ -2,38 +2,43 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>“Cache the data for other uses!”</TITLE> 
+ <TITLE>Oracle’s EXPLAIN PLAN</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>“Cache the data for other uses!”</H1> 
+ <H1>Oracle’s EXPLAIN PLAN</H1> 
  <P><UL>
-<H2>dbmopen(%price_cache, "price_cache", 0644) or die …;
+<LI><H2>To generate a plan:
 </H2>
-</UL><UL>
-<H2>
+<UL>
+ EXPLAIN PLAN SET STATEMENT_ID = 'Emp_Sal’ FOR 
+<BR><BR> SELECT ename, job, sal, dname
+<BR>   FROM emp, dept
+<BR>  WHERE emp.deptno = dept.deptno
+<BR>    AND NOT EXISTS
+<BR>          (SELECT * FROM salgrade
+<BR>           WHERE emp.sal BETWEEN losal AND hisal);
+<UL>
+<LI>
+</UL></UL></UL><UL>
+<LI><H2>That writes plan details into a table which can be queried to yield results like this: 
 </H2>
-</UL><UL>
-<H2>while ($line = &#060COST&#062) {
-</H2>
-</UL><UL>
-<H2>    . . .
-</H2>
-</UL><UL>
-<H2>    write;  # using format with $prod, $cost and $note
-</H2>
-</UL><UL>
-<H2>
-</H2>
-</UL><UL>
-<H2>	 $price_cache{$prod} = "$cost $note";
-</H2>
-</UL><UL>
-<H2>}</H2>
-</UL></P>
+<UL>
+ID  PAR Query Plan
+<BR><BR>--- --- --------------------------------------------------
+<BR>  0     Select Statement   Cost = 69602
+<BR>  1   0   Nested Loops
+<BR>  2   1     Nested Loops
+<BR>  3   2       Merge Join
+<BR>  4   3         Sort Join
+<BR>  5   4           Table Access Full T3
+<BR>  6   3         Sort Join
+<BR>  7   6           Table Access Full T4
+<BR>  8   2       Index Unique Scan T2
+<BR>  9   1     Table Access Full T1</UL></UL></P>
 <P></P> 
 <P>
 <TABLE>
@@ -45,15 +50,7 @@
 <BR>
 </P>
 
- <FONT size=4><STRONG> Notes: </FONT></STRONG>
-  <HR SIZE=3> <P> <UL>
-The company grows and now stocks thousands of products.
-</UL><UL>
-To save time the derived price for each product can be saved in a simple DBM' database (support for which is built into perl) and made available to other perl programs.
-</UL><UL>
-Just two additional lines of code is all that's needed.
-</UL><UL>
-(A similar pair of lines is all that's needed to read the data.)</UL> </P> 
+
 
 </Body>
 </HTML>

@@ -3,9 +3,9 @@
 
 <HTML>
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Defining the Output Format</TITLE> 
+ <TITLE>Prepare for speed</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -13,64 +13,38 @@
 <CENTER>
 <TABLE WIDTH=100%> 
      <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <IMG SRC="img008.gif" usemap="#Objmap" WIDTH=600 HEIGHT=450 BORDER=0>
+         <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
+         <A HREF="sld007.htm">Previous</A>&nbsp;&nbsp;
+         <A HREF="sld009.htm">Next</A>&nbsp;&nbsp;
+         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+&nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="tsld008.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <A HREF="sld001.htm"><IMG SRC="first.gif" BORDER=0 ALT="First"></A>
-         <A HREF="sld007.htm"><IMG SRC="prev.gif" BORDER=0 ALT="Previous"></A>
-         <A HREF="sld009.htm"><IMG SRC="next.gif" BORDER=0 ALT="Next"></A>
-         <A HREF="sld029.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
-         <IMG SRC="space.gif" BORDER=0>
-         <A HREF="index.htm"><IMG SRC="info.gif" BORDER=0 ALT="Index"></A>
-         <A HREF="tsld008.htm"><IMG SRC="text.gif" BORDER=0 ALT="Text"></A>
+         <IMG SRC="img008.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 8 of 29</P>
+<P>Slide 8 of 64</P>
 </CENTER>
-
- <CENTER><Font size=4> <STRONG> Notes:  </FONT></STRONG><HR SIZE=3></CENTER><P> <UL>
-Here we use perl’s built-in formatting mechanism to define the top of page headers and the layout and formatting of the body rows.
-</UL><UL>
-
-</UL><UL>
-Again: very few lines of code and just about every line directly related to the task.</UL> </P> 
 <!-- <UL>
-<H2>Defining the Output Format</H2>
+<H2>Prepare for speed</H2>
 </UL></P>
 <P><UL>
-<H2>format STDOUT_TOP =
+<LI><H2>prepare() - what happens in the server...
 </H2>
-</UL><UL>
-<H2>Code   Price    Notes
-</H2>
-</UL><UL>
-<H2>----   -------  --------
-</H2>
-</UL><UL>
-<H2>.
-</H2>
-</UL><UL>
-<H2>
-</H2>
-</UL><UL>
-<H2>format STDOUT =
-</H2>
-</UL><UL>
-<H2>@&#062&#062&#062   ^###.##  ^&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060
-</H2>
-</UL><UL>
-<H2>$prod, $cost,   $note
-</H2>
-</UL><UL>
-<H2>~~              ^&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060&#060
-</H2>
-</UL><UL>
-<H2>                $note
-</H2>
-</UL><UL>
-<H2>.
-</H2>
-</UL></P>
+<UL>
+<LI>Receive and parse the SQL statement into internal form
+<LI>Get details for all the selected tables
+<LI>Check access rights for each
+<LI>Get details for all the selected fields
+<LI>Check data types in expressions
+<LI>Get details for all the indices on all the tables
+<LI>Develop an optimised query 'access plan' for best execution
+<LI>Return a handle for all this cached information
+</UL><LI>This can be an expensive process
+<UL>
+<LI>especially the 'access plan’ for a complex multi-table query
+</UL><LI>Some databases, like MySQL, don't cache the information but have simpler, and thus faster, plan creation</UL></P>
 <P>  -->
 </Body>
 </HTML>

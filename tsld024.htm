@@ -2,24 +2,31 @@
 <HTML>
 
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
+
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>So why use the Perl DBI?</TITLE> 
+ <TITLE>The importance of error checking</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>So why use the Perl DBI?</H1> 
+ <H1>The importance of error checking</H1> 
  <P><UL>
-<LI><H2>Because...
+<LI><H2>Errors happen!
 </H2>
 <UL>
-<LI>It delivers what it promises
-<LI>It’s here, there and everywhere
-<LI>It’s fast, flexible and well proven
-<LI>It’s free, with source
-<LI>Commercial support is available
-<LI>It has a large user base and a strong future</UL></UL></P>
+<LI>Failure happens when you don't expect errors!
+<UL>
+<LI>database crash / network disconnection
+<LI>lack of disk space for insert or select (sort space for order by)
+<LI>server math error on select (divide by zero after 10,000 rows)
+<LI>and maybe, just maybe, errors in your own code [Gasp!]
+<LI>
+</UL><LI>Beat failure by expecting errors!
+<LI>
+<LI>Detect errors early to limit effects
+<UL>
+<LI>Defensive Programming, e.g., check assumptions
+<LI>Through Programming, e.g., check for errors after fetch loops</UL></UL></UL></P>
 <P></P> 
 <P>
 <TABLE>
@@ -31,27 +38,7 @@
 <BR>
 </P>
 
- <FONT size=4><STRONG> Notes: </FONT></STRONG>
-  <HR SIZE=3> <P> <UL>
-It delivers what it promises
-<BR>It works!
-<BR>
-<BR>It’s here, there and everywhere
-<BR>Portable and widely ported
-<BR>
-<BR>It’s fast, flexible and well proven
-</UL><UL>
-    Thousands of users
-</UL><UL>
 
-<UL>
-It’s free, with source
-<BR><BR>on the same terms as Perl itself
-<BR>
-<BR>Commercial support is available
-<BR>From www.perlclinic.com or www.ig.co.uk
-<BR>
-<BR>It has a large user base and a strong future</UL></UL> </P> 
 
 </Body>
 </HTML>
