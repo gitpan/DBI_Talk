@@ -4,38 +4,46 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Thin clients and other buzz words</TITLE> 
+ <TITLE>Web DBI - Browsing pages of results</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Thin clients and other buzz words</H1> 
+ <H1>Web DBI - Browsing pages of results</H1> 
  <P><UL>
-<LI><H2>Proxying for remote access: "thin-client"
+<LI><H2>Re-execute query each time then count/discard (simple but expensive)
 </H2>
 <UL>
-<LI>No need for database client code on the DBI client
+<LI>works well for small results sets or where users rarely view many pages
+<LI>fast initial response, degrades gradually for later pages
+<LI>count/discard in server is better but still inefficient for large result sets
+<LI>count/discard affected by inserts and deletes from other processes
 </UL></UL><UL>
-<LI><H2>Proxying for network security: "encryption"
+<LI><H2>Re-execute query with where clause using min/max keys from last results
 </H2>
 <UL>
-<LI>Can use Crypt::IDEA, Crypt::DES etc.
+<LI>works well where original query can be qualified in that way, not common
 </UL></UL><UL>
-<LI><H2>Proxying for "access control" and "firewalls"
+<LI><H2>Select and cache full result rows somewhere for fast access
 </H2>
 <UL>
-<LI>handy for web servers
+<LI>can be expensive for large result sets with big fields
 </UL></UL><UL>
-<LI><H2>Proxying for action control
+<LI><H2>Select and cache only the row keys, fetch full rows as needed
 </H2>
 <UL>
-<LI>e.g., only allow specific select or insert statements
+<LI>optimisation of above, use ROWID if supported, "select … where … in (…)"
 </UL></UL><UL>
-<LI><H2>Proxying for performance: "compression"
+<LI><H2>If data is static and queries predictable
 </H2>
 <UL>
-<LI>Can compress data transfers using Compress::Zlib
-</UL></UL></P>
+<LI>then custom pre-built indexes may be useful
+</UL></UL><UL>
+<LI><H2>The caches can be stored...
+</H2>
+<UL>
+<LI>on web server, e.g., using DBM file with locking (see also ‘spread’)
+<LI>on database server, e.g., using a table keyed by session id</UL></UL></P>
 <P></P> 
 <P>
 <TABLE>

@@ -5,7 +5,7 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Web DBI - Tips for the novice</TITLE> 
+ <TITLE>Enabling tracing</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -16,54 +16,43 @@
          <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
          <A HREF="sld050.htm">Previous</A>&nbsp;&nbsp;
          <A HREF="sld052.htm">Next</A>&nbsp;&nbsp;
-         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+         <A HREF="sld080.htm">Last</A>&nbsp;&nbsp;
 &nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="http://dbi.perl.org">Home</A>&nbsp;&nbsp;
          <A HREF="tsld051.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
          <IMG SRC="img051.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 51 of 64</P>
+<P>Slide 51 of 80</P>
 </CENTER>
 <!-- <UL>
-<H2>Web DBI - Tips for the novice</H2>
+<H2>Enabling tracing</H2>
 </UL></P>
 <P><UL>
-<LI><H2>Test one step at a time
+<LI><H2>Per handle
 </H2>
 <UL>
-<LI>Test perl + DBI + DBD driver outside the web server first
-<LI>Test web server + non-DBI CGI next
-</UL></UL><UL>
-<LI><H2>Remember that CGI scripts run as a different user with a different environment - expect to be tripped up by that.
-</H2>
+$h-&#062trace($level);
+<BR><BR>$h-&#062trace($level, $filename);
+</UL><LI>Only effects that handle and any new child handles created from it
+<LI>Child handles get trace level of parent in effect at time of creation
 </UL><UL>
-<LI><H2>DBI trace() is your friend - use it.
+<LI><H2>Global (internal to application)
 </H2>
+<UL>
+DBI-&#062trace(...);
+<BR></UL><LI>Sets effective global default minimum trace level
 </UL><UL>
-<LI><H2>Use the Perl "-w" and "-T" options. Always "use strict;"
-</H2>
-</UL><UL>
-<LI><H2>Read and inwardly digest the WWW Security FAQ:  
+<LI><H2>Global (external to application)
 </H2>
 <UL>
-<LI>http://www.w3.org/Security/Faq/www-security-faq.html
-</UL></UL><UL>
-<LI><H2>Read the Perl CGI FAQ:
-</H2>
+<LI>Enabled using DBI_TRACE environment variable
 <UL>
-<LI>http://www.perl.com/cgi-bin/pace/pub/doc/FAQs/cgi/perl-cgi-faq.html
-</UL></UL><UL>
-<LI><H2>And, if appropriate, read the mod_perl information available from:
-</H2>
-<UL>
-<LI>http://perl.apache.org</UL></UL></P>
-<P>  --><MAP NAME="Objmap">
-<AREA SHAPE=POLYGON COORDS="100, 481, 665, 481, 665, 505, 100, 505" HREF="http://www.perl.com/cgi-bin/pace/pub/doc/FAQs/cgi/perl-cgi-faq.html" >
-<AREA SHAPE=POLYGON COORDS="100, 542, 275, 542, 275, 566, 100, 566" HREF="http://perl.apache.org/" >
-<AREA SHAPE=POLYGON COORDS="100, 421, 552, 421, 552, 445, 100, 445" HREF="http://www.w3.org/Security/Faq/www-security-faq.html" >
-</MAP>
-
+DBI_TRACE=digits		  DBI-&#062trace(digits);
+<BR><BR>DBI_TRACE=filename		  DBI-&#062trace(2, filename);
+<BR>DBI_TRACE=digits=filename	  DBI-&#062trace(digits, filename);</UL></UL></UL></P>
+<P>  -->
 </Body>
 </HTML>

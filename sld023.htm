@@ -5,7 +5,7 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Error Checking & Error Handling</TITLE> 
+ <TITLE>Another prepare_cached() example</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -16,25 +16,36 @@
          <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
          <A HREF="sld022.htm">Previous</A>&nbsp;&nbsp;
          <A HREF="sld024.htm">Next</A>&nbsp;&nbsp;
-         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+         <A HREF="sld080.htm">Last</A>&nbsp;&nbsp;
 &nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="http://dbi.perl.org">Home</A>&nbsp;&nbsp;
          <A HREF="tsld023.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
          <IMG SRC="img023.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 23 of 64</P>
+<P>Slide 23 of 80</P>
 </CENTER>
 <!-- <UL>
-<H2>Error Checking & Error Handling</H2>
+<H2>Another prepare_cached() example</H2>
 </UL></P>
 <P><UL>
-<H2>To err is human,
+<LI><H2>Can also be used for dynamically constructed statements:
 </H2>
-</UL><UL>
-<H2>to detect, divine.</H2>
-</UL></P>
+<UL>
+<LI>
+<BR>  while ( ($field, $value) = each %search_fields ) {
+<BR>      push @sql,   "$field = ?";
+<BR>      push @values, $value;
+<BR>  }
+<BR>  $where = "";
+<BR>  $where = "where ".join(" and ", @sql) if @sql;
+<BR>  $sth = $dbh-&#062prepare_cached("select * from table $where");
+<BR>  $sth-&#062execute(@values);
+<BR>
+<LI>but beware caching too many variations because, for many databases, each statement handle consumes some resources on the server (e.g. a cursor)
+</UL></UL></P>
 <P>  -->
 </Body>
 </HTML>

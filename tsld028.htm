@@ -4,18 +4,38 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Wheels within Wheels</TITLE> 
+ <TITLE>First, the simple stuff...</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Wheels within Wheels</H1> 
+ <H1>First, the simple stuff...</H1> 
  <P><UL>
-<H2>The DBI architecture
+<LI><H2>After calling prepare() on a statement with placeholders:
 </H2>
-</UL><UL>
-<H2>and how to watch it at work</H2>
-</UL></P>
+<UL>
+$sth = $dbh-&#062prepare(“select * from table where k1=? and k2=?”);
+<BR><UL>
+<LI>
+</UL></UL></UL><UL>
+<LI><H2>Values need to be assigned (‘bound’) to each placeholder before the database can execute the statement
+</H2>
+<UL>
+<LI>
+</UL></UL><UL>
+<LI><H2>Either at execute, for simple cases:
+</H2>
+<UL>
+$sth-&#062execute($p1, $p2);
+<BR><UL>
+<LI>
+</UL></UL></UL><UL>
+<LI><H2>or before execute:
+</H2>
+<UL>
+$sth-&#062bind_param(1, $p1);
+<BR><BR>$sth-&#062bind_param(2, $p2);
+<BR>$sth-&#062execute;</UL></UL></P>
 <P></P> 
 <P>
 <TABLE>

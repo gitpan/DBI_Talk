@@ -4,18 +4,39 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>The Power of the Proxy</TITLE> 
+ <TITLE>Web DBI - Connect speed</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>The Power of the Proxy</H1> 
+ <H1>Web DBI - Connect speed</H1> 
  <P><UL>
-<H2>Thin clients ...
+<LI><H2>Databases can be slow to connect
 </H2>
-</UL><UL>
-<H2>and other buzz words</H2>
-</UL></P>
+<UL>
+<LI>Traditional CGI forces a new connect per request
+</UL></UL><UL>
+<LI><H2>Move Perl and DBI into the web server
+</H2>
+<UL>
+<LI>Apache with mod_perl and Apache::DBI module
+<LI>Microsoft IIS with ActiveState's PerlEx
+</UL></UL><UL>
+<LI><H2>Connections can then persist and be shared between requests
+</H2>
+<UL>
+<LI>Apache::DBI automatically used by DBI if loaded
+<LI>No CGI script changes required to get persistence
+</UL></UL><UL>
+<LI><H2>Take care not to change the shared session behaviour
+</H2>
+<UL>
+<LI>Leave the $dbh in the same state you found it!
+</UL></UL><UL>
+<LI><H2>Other alternatives include
+</H2>
+<UL>
+<LI>FastCGI, CGI::SpeedyCGI and CGI::MiniSvr</UL></UL></P>
 <P></P> 
 <P>
 <TABLE>

@@ -4,29 +4,38 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>The importance of error checking</TITLE> 
+ <TITLE>Keep a handle on your databases</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>The importance of error checking</H1> 
+ <H1>Keep a handle on your databases</H1> 
  <P><UL>
-<LI><H2>Errors happen!
+<LI><H2>Connecting to a database can be slow
+</H2>
+</UL><UL>
+<LI><H2>
+</H2>
+</UL><UL>
+<LI><H2>Try to connect once and stay connected where practical
 </H2>
 <UL>
-<LI>Failure happens when you don't expect errors!
+<LI>We'll discuss web server issues later
+</UL></UL><UL>
+<LI><H2>
+</H2>
+</UL><UL>
+<LI><H2>The connect_cached() method … 
+</H2>
 <UL>
-<LI>database crash / network disconnection
-<LI>lack of disk space for insert or select (sort space for order by)
-<LI>server math error on select (divide by zero after 10,000 rows)
-<LI>and maybe, just maybe, errors in your own code [Gasp!]
-<LI>
-</UL><LI>Beat failure by expecting errors!
-<LI>
-<LI>Detect errors early to limit effects
-<UL>
-<LI>Defensive Programming, e.g., check assumptions
-<LI>Through Programming, e.g., check for errors after fetch loops</UL></UL></UL></P>
+<LI>Acts like prepare_cached() but for database handles
+<LI>Like prepare_cached(), it’s handy for library code
+<LI>Potentially useful with DBD::Proxy & DBI::ProxyServer
+<LI>It also checks the connection and automatically reconnects if it's broken
+<LI>Works well combined with prepare_cached(), see following example
+</UL></UL><UL>
+<H2>.</H2>
+</UL></P>
 <P></P> 
 <P>
 <TABLE>

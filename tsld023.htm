@@ -4,18 +4,28 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Error Checking & Error Handling</TITLE> 
+ <TITLE>Another prepare_cached() example</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Error Checking & Error Handling</H1> 
+ <H1>Another prepare_cached() example</H1> 
  <P><UL>
-<H2>To err is human,
+<LI><H2>Can also be used for dynamically constructed statements:
 </H2>
-</UL><UL>
-<H2>to detect, divine.</H2>
-</UL></P>
+<UL>
+<LI>
+<BR>  while ( ($field, $value) = each %search_fields ) {
+<BR>      push @sql,   "$field = ?";
+<BR>      push @values, $value;
+<BR>  }
+<BR>  $where = "";
+<BR>  $where = "where ".join(" and ", @sql) if @sql;
+<BR>  $sth = $dbh-&#062prepare_cached("select * from table $where");
+<BR>  $sth-&#062execute(@values);
+<BR>
+<LI>but beware caching too many variations because, for many databases, each statement handle consumes some resources on the server (e.g. a cursor)
+</UL></UL></P>
 <P></P> 
 <P>
 <TABLE>

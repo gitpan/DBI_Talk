@@ -4,35 +4,43 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Enabling tracing</TITLE> 
+ <TITLE>Handling errors the smart way</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Enabling tracing</H1> 
+ <H1>Handling errors the smart way</H1> 
  <P><UL>
-<LI><H2>Per handle
+<LI><H2>Setting RaiseError make the DBI call die for you
 </H2>
 <UL>
-$h-&#062trace($level);
-<BR><BR>$h-&#062trace($level, $filename);
-</UL><LI>Only effects that handle and any new child handles created from it
-<LI>Child handles get trace level of parent in effect at time of creation
+<LI>
+</UL></UL><UL>
+<LI><H2>For simple applications immediate death on error is fine
+</H2>
+<UL>
+<LI>The error message is usually accurate and detailed enough
+<LI>Better than the error messages some developers use!
+</UL></UL><UL>
+<LI><H2>
+</H2>
 </UL><UL>
-<LI><H2>Global (internal to application)
+<LI><H2>For more advanced applications greater control is needed, perhaps:
 </H2>
 <UL>
-DBI-&#062trace(...);
-<BR></UL><LI>Sets effective global default minimum trace level
-</UL><UL>
-<LI><H2>Global (external to application)
+<LI>Correct the problem and retry
+<LI>or, Fail that chunk of work and move on to another
+<LI>or, Log error and clean up before a graceful exit
+<LI>or, whatever else to need to do
+<LI>
+</UL></UL><UL>
+<LI><H2>Buzzwords: Need to catch the error exception being thrown by RaiseError
 </H2>
 <UL>
-<LI>Enabled using DBI_TRACE environment variable
-<UL>
-DBI_TRACE=digits		  DBI-&#062trace(digits);
-<BR><BR>DBI_TRACE=filename		  DBI-&#062trace(2, filename);
-<BR>DBI_TRACE=digits=filename	  DBI-&#062trace(digits, filename);</UL></UL></UL></P>
+<LI>
+</UL></UL><UL>
+<H2>.</H2>
+</UL></P>
 <P></P> 
 <P>
 <TABLE>

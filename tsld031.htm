@@ -4,13 +4,36 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Architecture of the DBI classes #2</TITLE> 
+ <TITLE>Some TYPE gotchas</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Architecture of the DBI classes #2</H1> 
- <P></P> 
+ <H1>Some TYPE gotchas</H1> 
+ <P><UL>
+<LI><H2>Bind TYPE attribute is just a hint
+</H2>
+<UL>
+<LI>and like all hints in the DBI, they can be ignored
+</UL><LI>
+</UL><UL>
+<LI><H2>Most drivers only care about the number vs string distinction
+</H2>
+<UL>
+<LI>and ignore other type of TYPE value
+</UL></UL><UL>
+<LI><H2>
+</H2>
+</UL><UL>
+<LI><H2>For some drivers that do pay attention to the TYPE…
+</H2>
+<UL>
+<LI>using the wrong type can mean an index on the value field isn’t used!
+<LI>
+</UL></UL><UL>
+<H2>-</H2>
+</UL></P>
+<P></P> 
 <P>
 <TABLE>
   <TD HEIGHT=100 WIDTH=100> <A HREF="tsld030.htm">Previous slide</A> </TD>

@@ -4,27 +4,43 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Another prepare_cached() example</TITLE> 
+ <TITLE>Bind those columns!</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Another prepare_cached() example</H1> 
+ <H1>Bind those columns!</H1> 
  <P><UL>
-<LI><H2>Handy for dynamically constructed statements:
-</H2>
-</UL><UL>
-<LI><H2>
+<LI><H2>Compare
 </H2>
 <UL>
-  while ( ($field, $value) = each %search_fields ) {
-<BR><BR>      push @sql,   "$field = ?";
-<BR>      push @values, $value;
-<BR>  }
-<BR>  $where = "";
-<BR>  $where = "where ".join(" and ", @sql) if @sql;
-<BR>  $sth = $dbh-&#062prepare_cached("select * from table $where");
-<BR>  $sth-&#062execute(@values);</UL></UL></P>
+while($row = $sth-&#062fetchrow_arrayref) {
+<BR><BR>  print “$row-&#062[0]: $row-&#062[1]\n”;
+<BR>}
+</UL></UL><UL>
+<LI><H2>
+</H2>
+</UL><UL>
+<LI><H2>with
+</H2>
+<UL>
+$sth-&#062bind_columns(\$key, \$value);
+<BR><BR>while($sth-&#062fetchrow_arrayref) {
+<BR>  print “$key: $value\n”;
+<BR>}
+<LI>
+</UL></UL><UL>
+<LI><H2>No row assignment code!
+</H2>
+</UL><UL>
+<LI><H2>No field access code!
+</H2>
+<UL>
+<LI>
+</UL></UL><UL>
+<H2>      ... just magic
+</H2>
+</UL></P>
 <P></P> 
 <P>
 <TABLE>

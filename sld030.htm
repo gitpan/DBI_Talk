@@ -5,7 +5,7 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Architecture of the DBI classes #1</TITLE> 
+ <TITLE>Your TYPE or mine?</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -16,27 +16,45 @@
          <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
          <A HREF="sld029.htm">Previous</A>&nbsp;&nbsp;
          <A HREF="sld031.htm">Next</A>&nbsp;&nbsp;
-         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+         <A HREF="sld080.htm">Last</A>&nbsp;&nbsp;
 &nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="http://dbi.perl.org">Home</A>&nbsp;&nbsp;
          <A HREF="tsld030.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
          <IMG SRC="img030.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 30 of 64</P>
+<P>Slide 30 of 80</P>
 </CENTER>
 <!-- <UL>
-<H2>Architecture of the DBI classes #1</H2>
+<H2>Your TYPE or mine?</H2>
 </UL></P>
 <P><UL>
-‘’outer’’</UL></P>
-<P><UL>
-DBI</UL></P>
-<P><UL>
-DBI handle classes visible to applications.
+<LI><H2>Sometimes the data type needs to be specified
+</H2>
 </UL><UL>
-These classes are effectively ‘empty’.</UL></P>
+<LI><H2>
+</H2>
+<UL>
+use DBI qw(:sql_types);
+<BR><UL>
+<LI>to import the type constants
+</UL>$sth-&#062bind_param(1, $value, { TYPE =&#062 SQL_INTEGER });
+<UL>
+<LI>to specify the INTEGER type
+<LI>which can be abbreviated to:
+</UL>$sth-&#062bind_param(1, $value, SQL_INTEGER);
+<BR>
+</UL></UL><UL>
+<LI><H2>To just distinguish numeric versus string types, try
+</H2>
+<UL>
+$sth-&#062bind_param(1, $value+0);  # bind as numeric value
+<BR><BR>$sth-&#062bind_param(1, ”$value”);  # bind as string value
+<UL>
+<LI>Works because perl values generally know if they are strings or numbers. So...
+<LI>Generally the +0 or ”” isn’t needed because $value has the right ‘perl type’ already</UL></UL></UL></P>
 <P>  -->
 </Body>
 </HTML>

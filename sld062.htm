@@ -5,7 +5,7 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>DBD::Multiplex</TITLE> 
+ <TITLE>DBI security tainting</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -16,47 +16,46 @@
          <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
          <A HREF="sld061.htm">Previous</A>&nbsp;&nbsp;
          <A HREF="sld063.htm">Next</A>&nbsp;&nbsp;
-         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+         <A HREF="sld080.htm">Last</A>&nbsp;&nbsp;
 &nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="http://dbi.perl.org">Home</A>&nbsp;&nbsp;
          <A HREF="tsld062.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
          <IMG SRC="img062.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 62 of 64</P>
+<P>Slide 62 of 80</P>
 </CENTER>
 <!-- <UL>
-<H2>DBD::Multiplex</H2>
+<H2>DBI security tainting</H2>
 </UL></P>
 <P><UL>
-<LI><H2>DBD::Multiplex
+<LI><H2>By default the DBI ignores Perl tainting
 </H2>
 <UL>
-<LI>Connects to multiple databases at once (via DBI)
-<LI>Executes each statement on each database by default
-</UL></UL><UL>
-<LI><H2>Could be configured to:
-</H2>
-<UL>
-<LI>insert into all databases but select from one
-<LI>fallback to alternate database if primary is unavailable
-<LI>select round-robin / or at random to distribute load
-<LI>select from all and check results (pick most common)
-</UL></UL><UL>
-<LI><H2>Can be used with DBD::Proxy, either above or below
-</H2>
+<LI>doesn't taint returned data
+<LI>doesn't check that parameters are not tainted
+</UL><LI>
 </UL><UL>
-<LI><H2>May also acquire fancy caching in later versions
-</H2>
-</UL><UL>
-<LI><H2>Watch this space: ftp://not.tdlc.com/pub/Multiplex.pm
+<LI><H2>The Taint attribute enables that behaviour
 </H2>
 <UL>
-<LI>Developed by Thomas Kishel and Tim Bunce</UL></UL></P>
-<P>  --><MAP NAME="Objmap">
-<AREA SHAPE=POLYGON COORDS="269, 504, 655, 504, 655, 535, 269, 535" HREF="ftp://not.tdlc.com/pub/Multiplex.pm" >
-</MAP>
-
+<LI>If Perl itself is in taint mode
+<LI>
+</UL></UL><UL>
+<LI><H2>Each handle has it's own inherited Taint attribute
+</H2>
+<UL>
+<LI>So can be enabled for particular connections and disabled for particular statements, for example:
+</UL><LI>
+<BR>$dbh = DBI-&#062connect(…, { Taint =&#062 1 });
+<BR>$sth = $dbh-&#062prepare("select * from safe_table");
+<BR>$sth-&#062{Taint} = 0;  # no tainting on this handle
+<BR>
+</UL><UL>
+<H2>.</H2>
+</UL></P>
+<P>  -->
 </Body>
 </HTML>

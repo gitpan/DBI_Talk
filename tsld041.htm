@@ -4,36 +4,25 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Transactions - Life Preserving</TITLE> 
+ <TITLE>Transactions - Example code</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Transactions - Life Preserving</H1> 
+ <H1>Transactions - Example code</H1> 
  <P><UL>
-<LI><H2>Classic: system crash between one bank account being debited and another being credited.
-</H2>
-</UL><UL>
-<LI><H2>Dramatic: power failure during update statement on 3 million rows after 2 minutes when only part way through.
-</H2>
-</UL><UL>
-<LI><H2>Real-world: complex series of inter-related updates, deletes and inserts on many separate tables fails at the last step due to a duplicate primary key on an insert.
-</H2>
-</UL><UL>
-<LI><H2>
-</H2>
-</UL><UL>
-<LI><H2>Transaction recovery would handle all these situations automatically.
-</H2>
-</UL><UL>
-<LI><H2>Makes a system far more robust and trustworthy over the long term.
-</H2>
-</UL><UL>
-<LI><H2>Use transactions if your database supports them.
-</H2>
-</UL><UL>
-<LI><H2>If it doesn't and you need them, switch to a different database.</H2>
-</UL></P>
+$dbh-&#062{AutoCommit} = 0;
+<BR>$dbh-&#062{RaiseError} = 1;
+<BR>eval {
+<BR>    $dbh-&#062method(…);   # assorted DBI calls
+<BR>    foo(...);          # application code
+<BR>    $dbh-&#062commit;      # commit the changes
+<BR>};
+<BR>if ($@) {
+<BR>    warn "Transaction aborted because $@";
+<BR>    $dbh-&#062rollback;
+<BR>    ...
+<BR>}</UL></P>
 <P></P> 
 <P>
 <TABLE>

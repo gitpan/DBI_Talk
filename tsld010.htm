@@ -4,38 +4,48 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>The best laid plans</TITLE> 
+ <TITLE>How would you do it?</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>The best laid plans</H1> 
+ <H1>How would you do it?</H1> 
  <P><UL>
-<LI><H2>Query optimisation is hard
+<H2>   SELECT * FROM t1, t2  WHERE t1.key=1 AND t2.key=2 AND t1.value=t2.value
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<LI><H2>One possible approach:
 </H2>
 <UL>
-<LI>Intelligent high quality cost based query optimisation is really hard!
+  Select from one table using its key field (assume both tables have an index on key)
+<BR><BR>  Then, loop for each row returned, and...
+<BR>	  select from the other table using its key field and the current row’s value field
 </UL></UL><UL>
-<LI><H2>Know your optimiser
+<LI><H2>But which table to select first?
 </H2>
 <UL>
-<LI>Oracle, Informix, Sybase, DB2, SQL Server etc. all slightly different.
+  To keep it simple, assume that both tables have the same value in all rows
+<BR></UL></UL><UL>
+<LI><H2>If we know that t1.key=1 matches 1000 rows and t2.key=2 matches 1
+</H2>
+<UL>
+then we know that we should select from t2 first
+<BR><BR>because that way we only have to select from each table once
 </UL></UL><UL>
-<LI><H2>Check what it's doing
+<LI><H2>If we selected from t1 first
 </H2>
 <UL>
-<LI>Use tools to see the plans used for your queries - very helpful
-</UL></UL><UL>
-<LI><H2>Help it along
+then we’d have to select from t2 1000 times!
+<BR></UL></UL><UL>
+<LI><H2>An alternative approach would be to select from both and merge
 </H2>
-<UL>
-<LI>Most 'big name' databases have a mechanism to analyse and store the key distributions of indices to help the optimiser make good plans.
-<UL>
-<LI>Most important for tables with ‘skewed’ key distributions
-<LI>Beware: keep it fresh, old key distributions might be worse than none
-</UL><LI>Some also allow you to embed 'hints' into the SQL as comments
-<UL>
-<LI>Beware: take it easy, over hinting hinders dynamic optimisation </UL></UL></UL></P>
+</UL><UL>
+<H2>.
+</H2>
+</UL></P>
 <P></P> 
 <P>
 <TABLE>

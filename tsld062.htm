@@ -4,37 +4,38 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>DBD::Multiplex</TITLE> 
+ <TITLE>DBI security tainting</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>DBD::Multiplex</H1> 
+ <H1>DBI security tainting</H1> 
  <P><UL>
-<LI><H2>DBD::Multiplex
+<LI><H2>By default the DBI ignores Perl tainting
 </H2>
 <UL>
-<LI>Connects to multiple databases at once (via DBI)
-<LI>Executes each statement on each database by default
-</UL></UL><UL>
-<LI><H2>Could be configured to:
-</H2>
-<UL>
-<LI>insert into all databases but select from one
-<LI>fallback to alternate database if primary is unavailable
-<LI>select round-robin / or at random to distribute load
-<LI>select from all and check results (pick most common)
-</UL></UL><UL>
-<LI><H2>Can be used with DBD::Proxy, either above or below
-</H2>
+<LI>doesn't taint returned data
+<LI>doesn't check that parameters are not tainted
+</UL><LI>
 </UL><UL>
-<LI><H2>May also acquire fancy caching in later versions
+<LI><H2>The Taint attribute enables that behaviour
 </H2>
-</UL><UL>
-<LI><H2>Watch this space: <A HREF="ftp://not.tdlc.com/pub/Multiplex.pm">ftp://not.tdlc.com/pub/Multiplex.pm
-</A></H2>
 <UL>
-<LI>Developed by Thomas Kishel and Tim Bunce</UL></UL></P>
+<LI>If Perl itself is in taint mode
+<LI>
+</UL></UL><UL>
+<LI><H2>Each handle has it's own inherited Taint attribute
+</H2>
+<UL>
+<LI>So can be enabled for particular connections and disabled for particular statements, for example:
+</UL><LI>
+<BR>$dbh = DBI-&#062connect(…, { Taint =&#062 1 });
+<BR>$sth = $dbh-&#062prepare("select * from safe_table");
+<BR>$sth-&#062{Taint} = 0;  # no tainting on this handle
+<BR>
+</UL><UL>
+<H2>.</H2>
+</UL></P>
 <P></P> 
 <P>
 <TABLE>

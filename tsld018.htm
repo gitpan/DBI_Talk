@@ -4,30 +4,39 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Let the DBI cache your handles</TITLE> 
+ <TITLE>Sling less for speed</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Let the DBI cache your handles</H1> 
+ <H1>Sling less for speed</H1> 
  <P><UL>
-<LI><H2>Sometimes it's not easy to hold all your handles
+<LI><H2>while(@row = $sth-&#062fetchrow_array) { … }
 </H2>
 <UL>
-<LI>e.g., library code to lookup values from the database
-<LI>
+<LI>one field:   3,100 fetches per cpu second
+<LI>ten fields:  1,000 fetches per cpu second
 </UL></UL><UL>
-<LI><H2>The prepare_cached() method gives you a client side statement handle cache:
+<H2>
+</H2>
+</UL><UL>
+<LI><H2>while($row = $sth-&#062fetchrow_arrayref) { … }
 </H2>
 <UL>
-sub lookup_foo {
-<BR><BR>    my ($dbh, $id) = @_;
-<BR>    $sth = $dbh-&#062prepare_cached("select foo from table where id=?");
-<BR>    return $dbh-&#062selectrow_array($sth, $id);
-<BR>}
+<LI>one field:   5,300 fetches per cpu second
+<LI>ten fields:  4,000 fetches per cpu second 
 </UL></UL><UL>
-<LI><H2>Can avoid the need for global statement handle variables</H2>
-</UL></P>
+<H2>
+</H2>
+</UL><UL>
+<LI><H2>Notes:
+</H2>
+<UL>
+<LI>Timings made on an old SPARC 10 using DBD::Oracle
+<LI>Timings assume instant record fetch within driver
+<LI>Fields all just one char. @row would be even slower for more/bigger fields
+<LI>Use bind_columns() for direct access to fetched fields without copying
+</UL></UL></P>
 <P></P> 
 <P>
 <TABLE>

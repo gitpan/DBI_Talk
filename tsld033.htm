@@ -4,30 +4,31 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Method call walk-through</TITLE> 
+ <TITLE>The importance of error checking</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Method call walk-through</H1> 
+ <H1>The importance of error checking</H1> 
  <P><UL>
-<LI><H2>Consider a simple prepare call:     $dbh-&#062prepare(…)
-</H2>
-</UL><UL>
-<LI><H2>$dbh is reference to an object in the DBI::db class (regardless of driver)
-</H2>
-</UL><UL>
-<LI><H2>The DBI::db::prepare method is an alias for the DBI dispatch method
-</H2>
-</UL><UL>
-<LI><H2>DBI dispatch calls the driver’s own prepare method something like this:
+<LI><H2>Errors happen!
 </H2>
 <UL>
-   my $inner_hash_ref = …     # from tie magic
-<BR><BR>   my $implementor_class = …  # from DBI magic data
-<BR>   $inner_hash_ref-&#062$implementor_class::prepare(...)
-</UL></UL><UL>
-<LI><H2>Driver code gets the inner hash so it has fast access to the hash contents</H2>
+<LI>Failure happens when you don't expect errors!
+<UL>
+<LI>database crash / network disconnection
+<LI>lack of disk space for insert or select (sort space for order by)
+<LI>server math error on select (divide by zero after 10,000 rows)
+<LI>and maybe, just maybe, errors in your own code [Gasp!]
+<LI>
+</UL><LI>Beat failure by expecting errors!
+<LI>
+<LI>Detect errors early to limit effects
+<UL>
+<LI>Defensive Programming, e.g., check assumptions
+<LI>Through Programming, e.g., check for errors after fetch loops
+</UL></UL></UL><UL>
+<H2>.</H2>
 </UL></P>
 <P></P> 
 <P>

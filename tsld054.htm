@@ -4,17 +4,60 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Portability</TITLE> 
+ <TITLE>Trace level 2 and above</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Portability</H1> 
+ <H1>Trace level 2 and above</H1> 
  <P><UL>
-<H2>A Holy Grail
+<LI><H2>Trace level 2 shows calls with parameters and more:
 </H2>
 </UL><UL>
-<H2>To be taken with a pinch of salt</H2>
+<H2> 
+</H2>
+</UL><UL>
+<H2>    -&#062 connect for DBD::ODBC::dr (DBI::dr=HASH(0x13dfec)~0xe14a4
+</H2>
+</UL><UL>
+<H2>                                  '' '' **** HASH(0xe0a10))
+</H2>
+</UL><UL>
+<H2>    &#060- connect= DBI::db=HASH(0xe0ab0) at DBI.pm line 356.
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>    -&#062 STORE for DBD::ODBC::db (DBI::db=HASH(0xe0abc)~INNER 'PrintError' 1)
+</H2>
+</UL><UL>
+<H2>    &#060- STORE= 1 at DBI.pm line 382.
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>    -&#062 prepare for DBD::ODBC::db (DBI::db=HASH(0xe0ab0)~0xe0abc
+</H2>
+</UL><UL>
+<H2>                                  'UPDATE prices SET price=? WHERE prod_id=?')
+</H2>
+</UL><UL>
+<H2>    &#060- prepare= DBI::st=HASH(0xe1274) at test.pl line 7.
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<LI><H2>Trace level 3 and above shows more processing details
+</H2>
+</UL><UL>
+<LI><H2>
+</H2>
+</UL><UL>
+<H2>-
+</H2>
 </UL></P>
 <P></P> 
 <P>

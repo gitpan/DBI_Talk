@@ -5,7 +5,7 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Oracle’s EXPLAIN PLAN</TITLE> 
+ <TITLE>MySQL’s EXPLAIN PLAN</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -16,48 +16,47 @@
          <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
          <A HREF="sld011.htm">Previous</A>&nbsp;&nbsp;
          <A HREF="sld013.htm">Next</A>&nbsp;&nbsp;
-         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+         <A HREF="sld080.htm">Last</A>&nbsp;&nbsp;
 &nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="http://dbi.perl.org">Home</A>&nbsp;&nbsp;
          <A HREF="tsld012.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
          <IMG SRC="img012.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 12 of 64</P>
+<P>Slide 12 of 80</P>
 </CENTER>
 <!-- <UL>
-<H2>Oracle’s EXPLAIN PLAN</H2>
+<H2>MySQL’s EXPLAIN PLAN</H2>
 </UL></P>
 <P><UL>
 <LI><H2>To generate a plan:
 </H2>
 <UL>
- EXPLAIN PLAN SET STATEMENT_ID = 'Emp_Sal’ FOR 
-<BR><BR> SELECT ename, job, sal, dname
-<BR>   FROM emp, dept
-<BR>  WHERE emp.deptno = dept.deptno
-<BR>    AND NOT EXISTS
-<BR>          (SELECT * FROM salgrade
-<BR>           WHERE emp.sal BETWEEN losal AND hisal);
+EXPLAIN SELECT tt.TicketNumber, tt.TimeIn,
+<BR><BR>            tt.ProjectReference, tt.EstimatedShipDate,
+<BR>            tt.ActualShipDate, tt.ClientID,
+<BR>            tt.ServiceCodes, tt.RepetitiveID,
+<BR>            tt.CurrentProcess, tt.CurrentDPPerson,
+<BR>            tt.RecordVolume, tt.DPPrinted, et.COUNTRY,
+<BR>            et_1.COUNTRY, do.CUSTNAME	
+<BR>        FROM tt, et, et AS et_1, do
+<BR>        WHERE tt.SubmitTime IS NULL
+<BR>            AND tt.ActualPC = et.EMPLOYID
+<BR>            AND tt.AssignedPC = et_1.EMPLOYID
+<BR>            AND tt.ClientID = do.CUSTNMBR;
 <UL>
 <LI>
 </UL></UL></UL><UL>
-<LI><H2>That writes plan details into a table which can be queried to yield results like this: 
+<LI><H2>The plan is described as results like this: 
 </H2>
 <UL>
-ID  PAR Query Plan
-<BR><BR>--- --- --------------------------------------------------
-<BR>  0     Select Statement   Cost = 69602
-<BR>  1   0   Nested Loops
-<BR>  2   1     Nested Loops
-<BR>  3   2       Merge Join
-<BR>  4   3         Sort Join
-<BR>  5   4           Table Access Full T3
-<BR>  6   3         Sort Join
-<BR>  7   6           Table Access Full T4
-<BR>  8   2       Index Unique Scan T2
-<BR>  9   1     Table Access Full T1</UL></UL></P>
+TABLE TYPE   POSSIBLE_KEYS                KEY      KEY_LEN REF            ROWS  EXTRA
+<BR><BR>et    ALL    PRIMARY                      NULL     NULL    NULL           74
+<BR>tt    ref    AssignedPC,ClientID,ActualPC ActualPC 15      et.EMPLOYID    52    where used
+<BR>et_1  eq_ref PRIMARY                      PRIMARY  15      tt.AssignedPC  1
+<BR>do    eq_ref PRIMARY                      PRIMARY  15      tt.ClientID    1</UL></UL></P>
 <P>  -->
 </Body>
 </HTML>

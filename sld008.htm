@@ -5,7 +5,7 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Prepare for speed</TITLE> 
+ <TITLE>Partition for speed</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -16,35 +16,37 @@
          <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
          <A HREF="sld007.htm">Previous</A>&nbsp;&nbsp;
          <A HREF="sld009.htm">Next</A>&nbsp;&nbsp;
-         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+         <A HREF="sld080.htm">Last</A>&nbsp;&nbsp;
 &nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="http://dbi.perl.org">Home</A>&nbsp;&nbsp;
          <A HREF="tsld008.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
          <IMG SRC="img008.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 8 of 64</P>
+<P>Slide 8 of 80</P>
 </CENTER>
 <!-- <UL>
-<H2>Prepare for speed</H2>
+<H2>Partition for speed</H2>
 </UL></P>
 <P><UL>
-<LI><H2>prepare() - what happens in the server...
+<LI><H2>Application partitioning
 </H2>
 <UL>
-<LI>Receive and parse the SQL statement into internal form
-<LI>Get details for all the selected tables
-<LI>Check access rights for each
-<LI>Get details for all the selected fields
-<LI>Check data types in expressions
-<LI>Get details for all the indices on all the tables
-<LI>Develop an optimised query 'access plan' for best execution
-<LI>Return a handle for all this cached information
-</UL><LI>This can be an expensive process
+<LI>do what where? - stop and think - work smarter not harder
+</UL><LI>Pick the right database for the job, if you have the choice.
+<LI>Work close to the data
 <UL>
-<LI>especially the 'access plan’ for a complex multi-table query
-</UL><LI>Some databases, like MySQL, don't cache the information but have simpler, and thus faster, plan creation</UL></P>
+<LI>Moving data to/from the client is always expensive
+<LI>Consider latency as well as bandwidth
+<LI>Use stored procedures where appropriate
+<LI>Do more in SQL where appropriate - get a good book
+</UL><LI>Multiple simple queries with 'joins' in Perl may be faster.
+<LI>Use proprietary bulk-load, not Perl, where appropriate.
+<LI>Consider local caching, in memory or DBM file etc, e.g. Memoize.pm
+<LI>Mix 'n Match techniques as needed - experiment and benchmark.
+<BR>.</UL></P>
 <P>  -->
 </Body>
 </HTML>

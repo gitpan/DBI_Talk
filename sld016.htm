@@ -5,7 +5,7 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Hot handles</TITLE> 
+ <TITLE>Respect your server's SQL cache</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -16,45 +16,44 @@
          <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
          <A HREF="sld015.htm">Previous</A>&nbsp;&nbsp;
          <A HREF="sld017.htm">Next</A>&nbsp;&nbsp;
-         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+         <A HREF="sld080.htm">Last</A>&nbsp;&nbsp;
 &nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="http://dbi.perl.org">Home</A>&nbsp;&nbsp;
          <A HREF="tsld016.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
          <IMG SRC="img016.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 16 of 64</P>
+<P>Slide 16 of 80</P>
 </CENTER>
 <!-- <UL>
-<H2>Hot handles</H2>
+<H2>Respect your server's SQL cache</H2>
 </UL></P>
 <P><UL>
-<LI><H2>Avoid using $dbh-&#062do(…) in a speed-critical loop.
+<LI><H2>Optimised Access Plan etc. is cached within the server
 </H2>
+<UL>
+<LI>keyed by the exact original SQL string used
+</UL><LI>
 </UL><UL>
-<LI><H2>Use $sth = $dbh-&#062prepare(…)
+<LI><H2>Compare	do("insert … $id");
 </H2>
-</UL><UL>
-<H2>     and $sth-&#062execute() instead.
+<UL>
+        with	do("insert … ?", undef, $id);
+<BR><UL>
+<LI>
+</UL></UL></UL><UL>
+<LI><H2>Without placeholders, SQL string varies each time
 </H2>
-</UL><UL>
-<LI><H2>Using prepare() gets a handle on the statement in the SQL cache and keeps it there.
-</H2>
-</UL><UL>
-<LI><H2>Using the handle for the pre-prepared statement avoids a round-trip to server for SQL cache-check / parsing etc.
-</H2>
-</UL><UL>
-<LI><H2>For example, convert looped
-</H2>
-</UL><UL>
-<H2>       do("insert … ?", undef, $id)
-</H2>
-</UL><UL>
-<H2>       to prepare("insert … ?")and looped execute($id)
-</H2>
-</UL><UL>
-<LI><H2>This often gives a significant performance boost</H2>
+<UL>
+<LI>so cached one is not reused
+<LI>so time is wasted creating a new access plan
+<LI>the new statement and access plan are added to cache
+<LI>so the cache fills and other statements get pushed out
+<LI>on a busy system this can lead to ‘thrashing’
+</UL></UL><UL>
+<H2>.</H2>
 </UL></P>
 <P>  -->
 </Body>

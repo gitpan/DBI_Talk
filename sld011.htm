@@ -5,7 +5,7 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>MySQL’s EXPLAIN PLAN</TITLE> 
+ <TITLE>The best laid plans</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -16,48 +16,49 @@
          <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
          <A HREF="sld010.htm">Previous</A>&nbsp;&nbsp;
          <A HREF="sld012.htm">Next</A>&nbsp;&nbsp;
-         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+         <A HREF="sld080.htm">Last</A>&nbsp;&nbsp;
 &nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="http://dbi.perl.org">Home</A>&nbsp;&nbsp;
          <A HREF="tsld011.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
          <IMG SRC="img011.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 11 of 64</P>
+<P>Slide 11 of 80</P>
 </CENTER>
 <!-- <UL>
-<H2>MySQL’s EXPLAIN PLAN</H2>
+<H2>The best laid plans</H2>
 </UL></P>
 <P><UL>
-<LI><H2>To generate a plan:
+<LI><H2>Query optimisation is hard
 </H2>
 <UL>
-     EXPLAIN
-<BR><BR>     SELECT tt.TicketNumber, tt.TimeIn,
-<BR>            tt.ProjectReference, tt.EstimatedShipDate,
-<BR>            tt.ActualShipDate, tt.ClientID,
-<BR>            tt.ServiceCodes, tt.RepetitiveID,
-<BR>            tt.CurrentProcess, tt.CurrentDPPerson,
-<BR>            tt.RecordVolume, tt.DPPrinted, et.COUNTRY,
-<BR>            et_1.COUNTRY, do.CUSTNAME	
-<BR>        FROM tt, et, et AS et_1, do
-<BR>        WHERE tt.SubmitTime IS NULL
-<BR>            AND tt.ActualPC = et.EMPLOYID
-<BR>            AND tt.AssignedPC = et_1.EMPLOYID
-<BR>            AND tt.ClientID = do.CUSTNMBR;
+<LI>Intelligent high quality cost based query optimisation is really hard!
+</UL></UL><UL>
+<LI><H2>Know your optimiser
+</H2>
 <UL>
-<LI>
+<LI>Oracle, Informix, Sybase, DB2, SQL Server etc. all slightly different.
+</UL></UL><UL>
+<LI><H2>Check what it's doing
+</H2>
+<UL>
+<LI>Use tools to see the plans used for your queries - very helpful
+</UL></UL><UL>
+<LI><H2>Help it along
+</H2>
+<UL>
+<LI>Most 'big name' databases have a mechanism to analyse and store the key distributions of indices to help the optimiser make good plans.
+<UL>
+<LI>Most important for tables with ‘skewed’ (uneven) key distributions
+<LI>Beware: keep it fresh, old key distributions might be worse than none
+</UL><LI>Some also allow you to embed 'hints' into the SQL as comments
+<UL>
+<LI>Beware: take it easy, over hinting hinders dynamic optimisation 
 </UL></UL></UL><UL>
-<LI><H2>The plan is described as results like this: 
-</H2>
-<UL>
-TABLE TYPE   POSSIBLE_KEYS                KEY      KEY_LEN REF            ROWS     EXTRA
-<BR><BR>et    ALL    PRIMARY                      NULL     NULL    NULL           74
-<BR>tt    ref    AssignedPC,ClientID,ActualPC ActualPC 15      et.EMPLOYID    52       where used
-<BR>et_1  eq_ref PRIMARY                      PRIMARY  15      tt.AssignedPC  1
-<BR>do    eq_ref PRIMARY                      PRIMARY  15      tt.ClientID    1
-</UL></UL></P>
+<H2>.</H2>
+</UL></P>
 <P>  -->
 </Body>
 </HTML>

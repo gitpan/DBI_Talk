@@ -4,13 +4,42 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>PPT Slide</TITLE> 
+ <TITLE>Oracle’s EXPLAIN PLAN</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>PPT Slide</H1> 
- <P></P> 
+ <H1>Oracle’s EXPLAIN PLAN</H1> 
+ <P><UL>
+<LI><H2>To generate a plan:
+</H2>
+<UL>
+ EXPLAIN PLAN SET STATEMENT_ID = 'Emp_Sal’ FOR 
+<BR><BR> SELECT ename, job, sal, dname
+<BR>   FROM emp, dept
+<BR>  WHERE emp.deptno = dept.deptno
+<BR>    AND NOT EXISTS
+<BR>          (SELECT * FROM salgrade
+<BR>           WHERE emp.sal BETWEEN losal AND hisal);
+<UL>
+<LI>
+</UL></UL></UL><UL>
+<LI><H2>That writes plan details into a table which can be queried to yield results like this: 
+</H2>
+<UL>
+ID  PAR Query Plan
+<BR><BR>--- --- --------------------------------------------------
+<BR>  0     Select Statement   Cost = 69602
+<BR>  1   0   Nested Loops
+<BR>  2   1     Nested Loops
+<BR>  3   2       Merge Join
+<BR>  4   3         Sort Join
+<BR>  5   4           Table Access Full T3
+<BR>  6   3         Sort Join
+<BR>  7   6           Table Access Full T4
+<BR>  8   2       Index Unique Scan T2
+<BR>  9   1     Table Access Full T1</UL></UL></P>
+<P></P> 
 <P>
 <TABLE>
   <TD HEIGHT=100 WIDTH=100> <A HREF="tsld012.htm">Previous slide</A> </TD>

@@ -4,13 +4,36 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>A Proxy Picture</TITLE> 
+ <TITLE>Web DBI - State-less-ness</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>A Proxy Picture</H1> 
- <P></P> 
+ <H1>Web DBI - State-less-ness</H1> 
+ <P><UL>
+<LI><H2>No fixed client-server pair
+</H2>
+<UL>
+<LI>Each request can be handled by a different process.
+<LI>So can't simply stop fetching rows from $sth when one page is complete and continue fetching from the same $sth when the next page is requested.
+<LI>And transactions can't span requests.
+<LI>Even if they could you'd have problems with database locks being held etc.
+</UL></UL><UL>
+<LI><H2>Need access to 'accumulated state' somehow: 
+</H2>
+<UL>
+<LI>via the client (e.g., hidden form fields - simple but insecure)
+<LI>via the server:
+<UL>
+<LI>in the database (records in a session_state table keyed by a ‘session id’)
+<LI>in the web server file system (DBM files etc) if shared across servers
+<LI>Need to purge old state info if stored on server, so timestamp it
+<LI>See Apache::Session module
+</UL><LI>DBI::ProxyServer + connect_cached with session id may suit, one day
+</UL></UL><UL>
+<H2>.</H2>
+</UL></P>
+<P></P> 
 <P>
 <TABLE>
   <TD HEIGHT=100 WIDTH=100> <A HREF="tsld057.htm">Previous slide</A> </TD>

@@ -1,0 +1,55 @@
+
+<HTML>
+
+<HEAD>
+
+<meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
+ <TITLE>What’s new?  (since the book)</TITLE> 
+</HEAD>
+
+<BODY     >
+
+ <H1>What’s new?  (since the book)</H1> 
+ <P><UL>
+<LI><H2>$DBI::lasth
+</H2>
+<UL>
+<LI>the last handle used to make a DBI call, handy for exception handlers
+</UL></UL><UL>
+<LI><H2>$statement = $dbh-&#062{Statement}
+</H2>
+<UL>
+<LI>holds a copy of the last statement prepared or executed by a child statement handle
+<LI>e.g. $DBI::lasth-&#062{Statement} in exception handler
+</UL></UL><UL>
+<LI><H2>$h-&#062{ShowErrorStatement} = 1
+</H2>
+<UL>
+<LI>append $h-&#062{Statement} to RaiseError/PrintError messages:
+<LI>DBD::foo::execute failed: duplicate key [for ``insert …’’]
+<LI>Many drivers should enable it by default. Inherited by child handles.
+</UL></UL><UL>
+<LI><H2>$h-&#062{FetchHashKeyName} = ’NAME_lc’
+</H2>
+<UL>
+<LI>Define the default attribute used by fetchrow_hashref() for key names
+<LI>Makes porting scripts much easier (e.g., MySQL &#060-&#062 Oracle)
+</UL></UL><UL>
+<H2>.
+</H2>
+</UL></P>
+<P></P> 
+<P>
+<TABLE>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld074.htm">Previous slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=100> <A HREF="tsld076.htm">Next slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="tsld001.htm">Back to first slide</A> </TD>
+  <TD HEIGHT=100 WIDTH=150> <A HREF="sld075.htm">View graphic version</A> </TD>
+</TABLE>
+<BR>
+</P>
+
+
+
+</Body>
+</HTML>

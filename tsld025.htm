@@ -4,30 +4,39 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Error checking - ways and means</TITLE> 
+ <TITLE>A connect_cached() example</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Error checking - ways and means</H1> 
+ <H1>A connect_cached() example</H1> 
  <P><UL>
-<LI><H2>Error checking the hard way...
+<LI><H2>Compare and contrast...
 </H2>
 <UL>
-
-<BR><BR>$h-&#062method || die "DBI method failed: $DBI::errstr";
-<BR>$h-&#062method || die "DBI method failed: $DBI::errstr";
-<BR>$h-&#062method || die "DBI method failed: $DBI::errstr";
+my $dbh = DBI-&#062connect(…);
+<BR><BR>sub lookup_foo_1 {
+<BR>    my ($id) = @_;
+<BR>    $sth = $dbh-&#062prepare_cached("select foo from table where id=?");
+<BR>    return $dbh-&#062selectrow_array($sth, $id);
+<BR>}
+</UL></UL><UL>
+<LI><H2>with...
+</H2>
+<UL>
+sub lookup_foo_2 {
+<BR><BR>    my ($id) = @_;
+<BR>    my $dbh = DBI-&#062connect_cached(…);
+<BR>    $sth = $dbh-&#062prepare_cached("select foo from table where id=?");
+<BR>    return $dbh-&#062selectrow_array($sth, $id);
+<BR>}
 <BR>
 </UL></UL><UL>
-<LI><H2>Error checking the smart way...
+<H2>Clue: what happens if the database is restarted?
 </H2>
-<UL>
-
-<BR><BR>$h-&#062{RaiseError} = 1;
-<BR>$h-&#062method;
-<BR>$h-&#062method;
-<BR>$h-&#062method;</UL></UL></P>
+</UL><UL>
+<H2>.</H2>
+</UL></P>
 <P></P> 
 <P>
 <TABLE>

@@ -4,33 +4,38 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Web DBI - Concurrent editing</TITLE> 
+ <TITLE>Watching the DBI in action</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Web DBI - Concurrent editing</H1> 
+ <H1>Watching the DBI in action</H1> 
  <P><UL>
-<LI><H2>How to prevent updates overwriting each other?
+<LI><H2>DBI has detailed call tracing built-in
+</H2>
+</UL><UL>
+<LI><H2>The trace can be very helpful in understanding application behavior and for debugging
+</H2>
+</UL><UL>
+<LI><H2>Shows parameters and results
+</H2>
+</UL><UL>
+<LI><H2>Can show detailed driver internal information
+</H2>
+</UL><UL>
+<LI><H2>Trace information can be written to a file
+</H2>
+</UL><UL>
+<LI><H2>Not used often enough
 </H2>
 <UL>
-<LI>You can use Optimistic Locking via 'qualified update':
-<UL>
-update table set ...
-<BR><BR>where  key = $old_key
-<BR>and field1 = $old_field1
-<BR>and field2 = $old_field2 and … for all fields
-</UL></UL></UL><UL>
-<LI><H2>Check the update row count
-</H2>
-<UL>
-<LI>If it's zero then you know the record has been changed or deleted by another process
-</UL></UL><UL>
-<LI><H2>Note
-</H2>
-<UL>
-<LI>Potential problems with floating point data values not matching
-<LI>Some databases support a high-resolution 'update timestamp' field that can be checked instead</UL></UL></P>
+	Not used often enough
+<BR><UL>
+	Not used often enough!
+<BR><UL>
+	Not used often enough!
+<BR></UL>
+</UL></UL></UL></P>
 <P></P> 
 <P>
 <TABLE>

@@ -4,39 +4,20 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Web DBI - Connect speed</TITLE> 
+ <TITLE>Architecture of the DBI classes #1</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Web DBI - Connect speed</H1> 
+ <H1>Architecture of the DBI classes #1</H1> 
  <P><UL>
-<LI><H2>Databases can be slow to connect
-</H2>
-<UL>
-<LI>Traditional CGI forces a new connect per request
-</UL></UL><UL>
-<LI><H2>Move Perl and DBI into the web server
-</H2>
-<UL>
-<LI>Apache with mod_perl and Apache::DBI module
-<LI>Microsoft IIS with ActiveState's PerlEx
-</UL></UL><UL>
-<LI><H2>Connections can then persist and be shared between requests
-</H2>
-<UL>
-<LI>Apache::DBI automatically used by DBI if loaded
-<LI>No CGI script changes required to get persistence
-</UL></UL><UL>
-<LI><H2>Take care not to change the shared session behaviour
-</H2>
-<UL>
-<LI>Leave the $dbh in the same state you found it!
-</UL></UL><UL>
-<LI><H2>Other alternatives include
-</H2>
-<UL>
-<LI>FastCGI, CGI::SpeedyCGI and CGI::MiniSvr</UL></UL></P>
+‘’outer’’</UL></P>
+<P><UL>
+DBI</UL></P>
+<P><UL>
+DBI handle classes visible to applications.
+</UL><UL>
+These classes are effectively ‘empty’.</UL></P>
 <P></P> 
 <P>
 <TABLE>

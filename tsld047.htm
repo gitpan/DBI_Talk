@@ -4,32 +4,50 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Web DBI - Too many connections</TITLE> 
+ <TITLE>Architecture of the DBI classes #2</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Web DBI - Too many connections</H1> 
+ <H1>Architecture of the DBI classes #2</H1> 
  <P><UL>
-<LI><H2>Limits on Database Connections
-</H2>
-<UL>
-<LI>Database platform resources or licensing
-<LI>Memory consumption of web servers
-</UL><LI>
+
 </UL><UL>
-<LI><H2>Partition web servers into General and Database
-</H2>
+
 </UL><UL>
-<LI><H2>
-</H2>
+
 </UL><UL>
-<LI><H2>Direct database work to the Database web servers
-</H2>
-<UL>
-<LI>Use Reverse Proxy / Redirect / Rewrite to achieve this
-<LI>Allows each subset of servers to be tuned to best fit workload
-<LI>And/or be run on appropriate hardware platforms</UL></UL></P>
+
+</UL><UL>
+
+</UL><UL>
+
+</UL><UL>
+
+</UL><UL>
+Application
+</UL><UL>
+makes calls
+</UL><UL>
+to methods
+</UL><UL>
+using DBI handle
+</UL><UL>
+objects</UL></P>
+<P><UL>
+method1</UL></P>
+<P><UL>
+method2</UL></P>
+<P><UL>
+method3</UL></P>
+<P><UL>
+method4</UL></P>
+<P><UL>
+method5</UL></P>
+<P><UL>
+method6</UL></P>
+<P><UL>
+DBI::db</UL></P>
 <P></P> 
 <P>
 <TABLE>

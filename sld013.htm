@@ -5,7 +5,7 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>PPT Slide</TITLE> 
+ <TITLE>Oracle’s EXPLAIN PLAN</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -16,16 +16,49 @@
          <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
          <A HREF="sld012.htm">Previous</A>&nbsp;&nbsp;
          <A HREF="sld014.htm">Next</A>&nbsp;&nbsp;
-         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+         <A HREF="sld080.htm">Last</A>&nbsp;&nbsp;
 &nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="http://dbi.perl.org">Home</A>&nbsp;&nbsp;
          <A HREF="tsld013.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
          <IMG SRC="img013.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 13 of 64</P>
+<P>Slide 13 of 80</P>
 </CENTER>
-<!--   -->
+<!-- <UL>
+<H2>Oracle’s EXPLAIN PLAN</H2>
+</UL></P>
+<P><UL>
+<LI><H2>To generate a plan:
+</H2>
+<UL>
+ EXPLAIN PLAN SET STATEMENT_ID = 'Emp_Sal’ FOR 
+<BR><BR> SELECT ename, job, sal, dname
+<BR>   FROM emp, dept
+<BR>  WHERE emp.deptno = dept.deptno
+<BR>    AND NOT EXISTS
+<BR>          (SELECT * FROM salgrade
+<BR>           WHERE emp.sal BETWEEN losal AND hisal);
+<UL>
+<LI>
+</UL></UL></UL><UL>
+<LI><H2>That writes plan details into a table which can be queried to yield results like this: 
+</H2>
+<UL>
+ID  PAR Query Plan
+<BR><BR>--- --- --------------------------------------------------
+<BR>  0     Select Statement   Cost = 69602
+<BR>  1   0   Nested Loops
+<BR>  2   1     Nested Loops
+<BR>  3   2       Merge Join
+<BR>  4   3         Sort Join
+<BR>  5   4           Table Access Full T3
+<BR>  6   3         Sort Join
+<BR>  7   6           Table Access Full T4
+<BR>  8   2       Index Unique Scan T2
+<BR>  9   1     Table Access Full T1</UL></UL></P>
+<P>  -->
 </Body>
 </HTML>

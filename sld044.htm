@@ -5,7 +5,7 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Transactions - Further comments</TITLE> 
+ <TITLE>Wheels within Wheels</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -16,43 +16,26 @@
          <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
          <A HREF="sld043.htm">Previous</A>&nbsp;&nbsp;
          <A HREF="sld045.htm">Next</A>&nbsp;&nbsp;
-         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+         <A HREF="sld080.htm">Last</A>&nbsp;&nbsp;
 &nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="http://dbi.perl.org">Home</A>&nbsp;&nbsp;
          <A HREF="tsld044.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
          <IMG SRC="img044.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 44 of 64</P>
+<P>Slide 44 of 80</P>
 </CENTER>
 <!-- <UL>
-<H2>Transactions - Further comments</H2>
+<H2>Wheels within Wheels</H2>
 </UL></P>
 <P><UL>
-<LI><H2>The eval { … } catches all exceptions
+<H2>The DBI architecture
 </H2>
-<UL>
-<LI>not just from DBI calls. Also catches fatal runtime errors from Perl.
-</UL></UL><UL>
-<LI><H2>Put commit() inside the eval
-</H2>
-<UL>
-<LI>ensures commit failure is caught cleanly.
-<LI>remember that commit() itself may fail for many reasons.
-</UL></UL><UL>
-<LI><H2>Don't forget that rollback() may also fail
-</H2>
-<UL>
-<LI>due to database crash or network failure etc.
-<LI>so you may want to call eval { $dbh-&#062rollback() };
-</UL></UL><UL>
-<LI><H2>Other points:
-</H2>
-<UL>
-<LI>Always explicitly commit or rollback before disconnect().
-<LI>Destroying a connected $dbh should always rollback.
-<LI>END blocks can catch exit-without-disconnect to rollback and disconnect cleanly.</UL></UL></P>
+</UL><UL>
+<H2>and how to watch it at work</H2>
+</UL></P>
 <P>  -->
 </Body>
 </HTML>

@@ -4,38 +4,63 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Handling LONG/BLOB data</TITLE> 
+ <TITLE>Trace level 1</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Handling LONG/BLOB data</H1> 
+ <H1>Trace level 1</H1> 
  <P><UL>
-<LI><H2>What makes LONG / BLOB / MEMO data special?
+<LI><H2>Trace level 1 shows method results and line numbers:
 </H2>
-<UL>
-<LI>Not practical to pre-allocate fixed size buffers for worst case
-<LI>
-</UL></UL><UL>
-<LI><H2>Fetching LONGs - treat as normal fields after setting:
+</UL><UL>
+<H2>
 </H2>
-<UL>
-<LI>$dbh-&#062{LongReadLen} - buffer size to allocate for expected data
-<LI>$dbh-&#062{LongTruncOk} - should truncating-to-fit be allowed
-<LI>
-</UL></UL><UL>
-<LI><H2>Inserting LONGs
+</UL><UL>
+<H2>    &#060- connect= DBI::db=HASH(0xe0abc) at DBI.pm line 356.
 </H2>
-<UL>
-<LI>The limitations of string literals
-<LI>The benefits of placeholders
-<LI>
-</UL></UL><UL>
-<LI><H2>Chunking / Piecewise processing not supported
+</UL><UL>
+<H2>    &#060- STORE('PrintError', 1)= 1 at DBI.pm line 382.
 </H2>
-<UL>
-<LI>So you're limited to available memory
-<LI>Some drivers support blob_read()and other private method</UL></UL></P>
+</UL><UL>
+<H2>    &#060- STORE('AutoCommit', 1)= 1 at DBI.pm line 382.
+</H2>
+</UL><UL>
+<H2>    &#060- STORE('RaiseError', 1)= 1 at DBI.pm line 382.
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>    &#060- prepare('UPDATE …')= DBI::st=HASH(0xe1238) at test.pl line 7.
+</H2>
+</UL><UL>
+<H2>    &#060- prepare('INSERT …')= DBI::st=HASH(0xe1504) at test.pl line 8.
+</H2>
+</UL><UL>
+<H2>    &#060- execute= '0E0' at test.pl line 9.
+</H2>
+</UL><UL>
+<H2>    &#060- execute= 1 at test.pl line 10.
+</H2>
+</UL><UL>
+<H2>    &#060- disconnect= 1 at test.pl line 11.
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>    &#060- DESTROY= undef
+</H2>
+</UL><UL>
+<H2>    ... 
+</H2>
+</UL><UL>
+<LI><H2>
+</H2>
+</UL><UL>
+<LI><H2>Use $DBI::neat_maxlen to alter truncation of strings in trace output</H2>
+</UL></P>
 <P></P> 
 <P>
 <TABLE>

@@ -4,37 +4,39 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Handling errors the smart way</TITLE> 
+ <TITLE>Some connect_cached() gotchas</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Handling errors the smart way</H1> 
+ <H1>Some connect_cached() gotchas</H1> 
  <P><UL>
-<LI><H2>Setting RaiseError make the DBI call die for you
+<LI><H2>Because connect_cached() may return a new connection it’s important to specify all significant attributes at connect time
 </H2>
 <UL>
-<LI>
-</UL></UL><UL>
-<LI><H2>For simple applications immediate death on error is fine
-</H2>
-<UL>
-<LI>The error message is usually accurate and detailed enough
-<LI>Better than the error messages some developers use!
+<LI>e.g., AutoCommit, RaiseError, PrintError
+<LI>So pass the same set of attributes into all connect calls
 </UL></UL><UL>
 <LI><H2>
 </H2>
 </UL><UL>
-<LI><H2>For more advanced applications greater control is needed, perhaps:
+<LI><H2>It’s new and subject to change with experience
 </H2>
 <UL>
-<LI>Correct the problem and retry
-<LI>or, Fail that chunk of work and move on to another
-<LI>or, Log error and clean up before a graceful exit
-<LI>or, whatever else to need to do
-<LI>
+<LI>The DBI may, in future, optionally keep track of which attributes have been changed, in which case the connect_cached() method could optionally reset the attributes of the new connection to be the same as current on the old.
 </UL></UL><UL>
-<LI><H2>Buzzwords: Need to catch the error exception being thrown by RaiseError</H2>
+<LI><H2>
+</H2>
+</UL><UL>
+<LI><H2>Similar, but not quite the same as Apache::DBI
+</H2>
+<UL>
+<LI>Doesn’t disable the disconnect() method.
+</UL></UL><UL>
+<LI><H2>
+</H2>
+</UL><UL>
+<H2>-</H2>
 </UL></P>
 <P></P> 
 <P>

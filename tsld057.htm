@@ -4,35 +4,40 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>DBD::Proxy & DBI::ProxyServer</TITLE> 
+ <TITLE>Web DBI - Too many connections</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>DBD::Proxy & DBI::ProxyServer</H1> 
+ <H1>Web DBI - Too many connections</H1> 
  <P><UL>
-<LI><H2>Networking for Non-networked databases
+<LI><H2>Busy web sites run many web server processes
+</H2>
+<UL>
+<LI>possibly on many machines
+<LI>
+</UL></UL><UL>
+<LI><H2>Limits on database connections
+</H2>
+<UL>
+<LI>Memory consumption of web server processes
+<LI>Database server resources or licensing
+</UL><LI>
+</UL><UL>
+<LI><H2>Partition web servers into General and Database
 </H2>
 </UL><UL>
-<LI><H2>DBD::Proxy driver forwards calls over network to remote DBI::ProxyServer
+<LI><H2>
 </H2>
 </UL><UL>
-<LI><H2>No changes in application behavior
+<LI><H2>Direct database work to the Database web servers
 </H2>
 <UL>
-<LI>Only the DBI-&#062connect statement needs to be changed
+<LI>Use Reverse Proxy / Redirect / Rewrite to achieve this
+<LI>Allows each subset of servers to be tuned to best fit workload
+<LI>And/or be run on appropriate hardware platforms
 </UL></UL><UL>
-<LI><H2>Proxy can be made completely transparent by setting the DBI_AUTOPROXY environment variable
-</H2>
-<UL>
-<LI>So not even the DBI-&#062connect statement needs to be changed!
-</UL></UL><UL>
-<LI><H2>DBI::ProxyServer works on Win32
-</H2>
-<UL>
-<LI>Access to Access and other Win32 ODBC and ADO data sources
-</UL></UL><UL>
-<LI><H2>Developed by Jochen Wiedmann</H2>
+<H2>.</H2>
 </UL></P>
 <P></P> 
 <P>

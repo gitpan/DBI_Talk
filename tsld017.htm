@@ -4,40 +4,41 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Summary (so far)</TITLE> 
+ <TITLE>Hot handles</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Summary (so far)</H1> 
+ <H1>Hot handles</H1> 
  <P><UL>
-<LI><H2>Think about the big picture first
+<LI><H2>Avoid using $dbh-&#062do(…) in a speed-critical loop
 </H2>
 <UL>
-	Partitioning, choice of tools etc
-<BR></UL></UL><UL>
-<LI><H2>Study and tune the access plans for your statements
+<LI>It’s usually creating and destroying a statement handle each time
+</UL></UL><UL>
+<LI><H2>Use $sth = $dbh-&#062prepare(…)and $sth-&#062execute() instead
+</H2>
+</UL><UL>
+<LI><H2>Using prepare() gets a handle on the statement in the SQL cache
 </H2>
 <UL>
-	Teach your database about your key distributions
-<BR></UL></UL><UL>
-<LI><H2>Use placeholders
+<LI>Avoids a round-trip to server for SQL cache check on each use
+</UL></UL><UL>
+<LI><H2>For example…  convert looped
 </H2>
 <UL>
-	Especially for any statements that vary and will be executed often
-<BR></UL></UL><UL>
-<LI><H2>Replace do() in a loop
+                 $dbh-&#062do("insert … ?", undef, $id)
+<BR><BR>       into    $sth = $dbh-&#062prepare("insert … ?”)
+<BR>       plus a looped  $sth-&#062execute($id)
+</UL></UL><UL>
+<LI><H2>This often gives a significant performance boost
 </H2>
 <UL>
-	with prepare() before the loop and execute() within it
-<BR></UL></UL><UL>
-<LI><H2>Usually…
-</H2>
-<UL>
-<LI>some drivers don’t support placeholders
-<LI>sometimes queries using placeholders are slower
-<UL>
-<LI>because access plan has to be more general</UL></UL></UL></P>
+<LI>even where placeholders are emulated, such as MySQL
+<LI>because it avoids statement handle creation overhead
+</UL></UL><UL>
+<H2>.</H2>
+</UL></P>
 <P></P> 
 <P>
 <TABLE>

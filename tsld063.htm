@@ -4,43 +4,41 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Reference Materials</TITLE> 
+ <TITLE>Handling LONG/BLOB data</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Reference Materials</H1> 
+ <H1>Handling LONG/BLOB data</H1> 
  <P><UL>
-<LI><H2><A HREF="http://www.symbolstone.org/technology/perl/DBI">http://www.symbolstone.org/technology/perl/DBI</A>
+<LI><H2>What makes LONG / BLOB / MEMO data special?
 </H2>
 <UL>
-<LI>The DBI Home Page
+<LI>Not practical to pre-allocate fixed size buffers for worst case
+<LI>
 </UL></UL><UL>
-<LI><H2><A HREF="http://www.isc.org/dbi-lists.html">http://www.isc.org/dbi-lists.html</A>
+<LI><H2>Fetching LONGs - treat as normal fields after setting:
 </H2>
 <UL>
-<LI>To subscribe to the DBI Mailing Lists
+<LI>$dbh-&#062{LongReadLen} - buffer size to allocate for expected data
+<LI>$dbh-&#062{LongTruncOk} - should truncating-to-fit be allowed
+<LI>
 </UL></UL><UL>
-<LI><H2><A HREF="http://www.perl.com/CPAN/authors/id/TIMB/DBI_Talk1_1997.tar.gz">http://www.perl.com/CPAN/authors/id/TIMB/DBI_Talk1_1997.tar.gz</A>
+<LI><H2>Inserting LONGs
 </H2>
 <UL>
-<LI>My DBI session at The Perl Conference 1.0 - general introduction
+<LI>The limitations of string literals
+<LI>The benefits of placeholders
+<LI>
 </UL></UL><UL>
-<LI><H2><A HREF="http://www.perl.com/CPAN/authors/id/TIMB/DBI_Talk2_1998.tar.gz">http://www.perl.com/CPAN/authors/id/TIMB/DBI_Talk2_1998.tar.gz</A>
+<LI><H2>Chunking / Piecewise processing not supported
 </H2>
 <UL>
-<LI>My DBI session at The Perl Conference 2.0 - more depth
+<LI>So you're limited to available memory
+<LI>Some drivers support blob_read()and other private method
 </UL></UL><UL>
-<LI><H2><A HREF="http://www.perl.com/CPAN/authors/id/TIMB/DBI_Talk2_1998.tar.gz">http://www.perl.com/CPAN/authors/id/TIMB/DBI_Talk4_2000.tar.gz</A>
-</H2>
-<UL>
-<LI>This DBI tutorial at The Perl Conference 4.0 (based on the 3.0 tutorial).
-</UL></UL><UL>
-<LI><H2><A HREF="http://www.oreilly.com/catalog/perldbi/">http://www.oreilly.com/catalog/perldbi/
-</A></H2>
-<UL>
-<LI>or <A HREF="http://www.amazon.com/exec/obidos/ASIN/1565926994/dbi">http://www.amazon.com/exec/obidos/ASIN/1565926994/dbi</A>
-<LI>Programming the Perl DBI - The DBI book!</UL></UL></P>
+<H2>-</H2>
+</UL></P>
 <P></P> 
 <P>
 <TABLE>

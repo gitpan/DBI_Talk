@@ -5,7 +5,7 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Keep a handle on your databases</TITLE> 
+ <TITLE>Speedy Summary</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -16,38 +16,56 @@
          <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
          <A HREF="sld019.htm">Previous</A>&nbsp;&nbsp;
          <A HREF="sld021.htm">Next</A>&nbsp;&nbsp;
-         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+         <A HREF="sld080.htm">Last</A>&nbsp;&nbsp;
 &nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="http://dbi.perl.org">Home</A>&nbsp;&nbsp;
          <A HREF="tsld020.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
          <IMG SRC="img020.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 20 of 64</P>
+<P>Slide 20 of 80</P>
 </CENTER>
 <!-- <UL>
-<H2>Keep a handle on your databases</H2>
+<H2>Speedy Summary</H2>
 </UL></P>
 <P><UL>
-<LI><H2>Connecting to a database can be slow
+<LI><H2>Think about the big picture first
+</H2>
+<UL>
+<LI>Partitioning, choice of tools etc
+</UL></UL><UL>
+<LI><H2>Study and tune the access plans for your statements
+</H2>
+<UL>
+<LI>Teach your database about any uneven key distributions
+</UL></UL><UL>
+<LI><H2>Use placeholders - where supported
+</H2>
+<UL>
+<LI>Especially for any statements that vary and will be executed often
+</UL></UL><UL>
+<LI><H2>Replace do() in a loop with prepare() and execute()
 </H2>
 </UL><UL>
-<LI><H2>Try to connect once and stay connected where practical
+<LI><H2>Usually… sometimes queries using placeholders are slower!
 </H2>
 <UL>
-<LI>We'll discuss web server issues later
+<LI>Because access plan has to be more general (try using hints in this situation)
 </UL></UL><UL>
-<LI><H2>The connect_cached() method
+<LI><H2>Sling less data for faster fetching
 </H2>
 <UL>
-<LI>Acts like prepare_cached() but for database handles
-<LI>It also checks the connection and reconnects if it's broken
-<LI>Like prepare_cached(), it’s most handy for library code
-<LI>Similar, but not quite the same as Apache::DBI
-<LI>New and subject to change with experience
-<LI>Potentially most useful with DBD::Proxy & DBI::ProxyServer
-<LI>Works well combined with prepare_cached()</UL></UL></P>
+<LI>Sling none for fastest!
+</UL></UL><UL>
+<LI><H2>Other important things to consider…
+</H2>
+<UL>
+<LI>hardware, operating system, and database configuration tuning
+</UL></UL><UL>
+<H2>-</H2>
+</UL></P>
 <P>  -->
 </Body>
 </HTML>

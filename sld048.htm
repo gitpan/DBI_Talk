@@ -5,7 +5,7 @@
 <HEAD>
 
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Web DBI - State-less-ness</TITLE> 
+ <TITLE>Anatomy of a DBI handle</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -16,38 +16,20 @@
          <A HREF="sld001.htm">First</A>&nbsp;&nbsp;
          <A HREF="sld047.htm">Previous</A>&nbsp;&nbsp;
          <A HREF="sld049.htm">Next</A>&nbsp;&nbsp;
-         <A HREF="sld064.htm">Last</A>&nbsp;&nbsp;
+         <A HREF="sld080.htm">Last</A>&nbsp;&nbsp;
 &nbsp;&nbsp;         <A HREF="index.htm">Index</A>&nbsp;&nbsp;
+         <A HREF="http://dbi.perl.org">Home</A>&nbsp;&nbsp;
          <A HREF="tsld048.htm">Text</A>&nbsp;&nbsp;
      </TD> </TR>
      <TR> <TD WIDTH=100% ALIGN=CENTER>
          <IMG SRC="img048.gif" usemap="#Objmap" WIDTH=800 HEIGHT=600 BORDER=0>
      </TD> </TR>
 </TABLE>
-<P>Slide 48 of 64</P>
+<P>Slide 48 of 80</P>
 </CENTER>
 <!-- <UL>
-<H2>Web DBI - State-less-ness</H2>
+<H2>Anatomy of a DBI handle</H2>
 </UL></P>
-<P><UL>
-<LI><H2>No fixed client-server pair
-</H2>
-<UL>
-<LI>Each request can be handled by a different process.
-<LI>So can't simply stop fetching when one page is complete and continue fetching from the same $sth when the next page is requested.
-<LI>And transactions can't span requests. Even if they could you'd have problems with database locks being held etc.
-</UL></UL><UL>
-<LI><H2>Need access to 'accumulated state' somehow: 
-</H2>
-<UL>
-<LI>via the client (e.g., hidden form fields)
-<LI>via the server:
-<UL>
-<LI>in the database (records in a session_state table keyed by a ‘session id’)
-<LI>in the web server file system (DBM files etc) if shared across servers
-<LI>Need to purge old state info if stored on server, so timestamp it
-<LI>See Apache::Session module
-</UL><LI>DBI::ProxyServer + connect_cached with session id may suit, one day</UL></UL></P>
 <P>  -->
 </Body>
 </HTML>
