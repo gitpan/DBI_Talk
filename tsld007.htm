@@ -4,24 +4,39 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>So why use the Perl DBI?</TITLE> 
+ <TITLE>Reading the CSV file</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>So why use the Perl DBI?</H1> 
+ <H1>Reading the CSV file</H1> 
  <P><UL>
-<LI><H2>Because...
+<H2>open MARGIN, “&#060margin.csv” or die “open margin.csv: $!”;
 </H2>
-<UL>
-<LI>It delivers what it promises
-<LI>It’s simple and quick to use
-<LI>It’s fast, flexible and well proven
-<LI>It’s here, there and everywhere
-<LI>It’s free, with source
-<LI>Drivers available for many databases
-<LI>Commercial support is available
-<LI>It has a large user base and a strong future</UL></UL></P>
+</UL><UL>
+<H2>while (&#060MARGIN&#062) {
+</H2>
+</UL><UL>
+<H2>    chop;
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>    ($prod, $margin, $notes) = split /,/;
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>    $prod_margin{$prod} = $margin;
+</H2>
+</UL><UL>
+<H2>    $prod_notes{$prod}  = $notes;
+</H2>
+</UL><UL>
+<H2>}</H2>
+</UL></P>
 <P></P> 
 <P>
 <TABLE>
@@ -33,7 +48,22 @@
 <BR>
 </P>
 
+ <FONT size=4><STRONG> Notes: </FONT></STRONG>
+  <HR SIZE=3> <P> <UL>
+Very few lines of code.
+</UL><UL>
+Just about every line directly related to the task.
+</UL><UL>
 
+</UL><UL>
+Not the best code in the world but it gets the job done.
+</UL><UL>
+(The split could be replaced with two lines of code to do the right thing
+</UL><UL>
+with quoted fields and embedded commas, for example.)
+</UL><UL>
+
+</UL> </P> 
 
 </Body>
 </HTML>

@@ -4,16 +4,36 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Anatomy of a DBI Handle</TITLE> 
+ <TITLE>“Cache the data for other uses!”</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Anatomy of a DBI Handle</H1> 
+ <H1>“Cache the data for other uses!”</H1> 
  <P><UL>
-Handle
+<H2>dbmopen(%price_cache, "price_cache", 0644) or die …;
+</H2>
 </UL><UL>
-Ref.</UL></P>
+<H2>
+</H2>
+</UL><UL>
+<H2>while ($line = &#060COST&#062) {
+</H2>
+</UL><UL>
+<H2>    . . .
+</H2>
+</UL><UL>
+<H2>    write;  # using format with $prod, $cost and $note
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>	 $price_cache{$prod} = "$cost $note";
+</H2>
+</UL><UL>
+<H2>}</H2>
+</UL></P>
 <P></P> 
 <P>
 <TABLE>
@@ -25,7 +45,15 @@ Ref.</UL></P>
 <BR>
 </P>
 
-
+ <FONT size=4><STRONG> Notes: </FONT></STRONG>
+  <HR SIZE=3> <P> <UL>
+The company grows and now stocks thousands of products.
+</UL><UL>
+To save time the derived price for each product can be saved in a simple DBM' database (support for which is built into perl) and made available to other perl programs.
+</UL><UL>
+Just two additional lines of code is all that's needed.
+</UL><UL>
+(A similar pair of lines is all that's needed to read the data.)</UL> </P> 
 
 </Body>
 </HTML>

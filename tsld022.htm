@@ -4,51 +4,35 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Trace Level 2</TITLE> 
+ <TITLE>What Next?</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Trace Level 2</H1> 
+ <H1>What Next?</H1> 
  <P><UL>
-<LI><H2>Trace Level 2 shows calls with parameters and more:
+<LI><H2>SQL for Non-SQL data sources
 </H2>
 </UL><UL>
-<H2> 
+<LI><H2>Networking for Non-Networked data sources
 </H2>
 </UL><UL>
-<H2>    -&#062 connect for DBD::ODBC::dr (DBI::dr=HASH(0x13dfec)~0xe14a4
+<LI><H2>Template driver for command line interfaces
 </H2>
 </UL><UL>
-<H2>                                  'demo' 'user' 'passwd' HASH(0xe0a10))
+<LI><H2>Data types, especially date/time/interval
 </H2>
 </UL><UL>
-<H2>    &#060- connect= DBI::db=HASH(0xe0ab0) at DBI.pm line 356.
+<LI><H2>Non-blocking (method calls return at once)
 </H2>
 </UL><UL>
-<H2>
+<LI><H2>Multi-threading
 </H2>
 </UL><UL>
-<H2>    -&#062 STORE for DBD::ODBC::db (DBI::db=HASH(0xe0abc)~INNER 'PrintError' 1)
+<LI><H2>Binding In/Out Variables
 </H2>
 </UL><UL>
-<H2>    &#060- STORE= 1 at DBI.pm line 382.
-</H2>
-</UL><UL>
-<H2>
-</H2>
-</UL><UL>
-<H2>    -&#062 prepare for DBD::ODBC::db (DBI::db=HASH(0xe0ab0)~0xe0abc
-</H2>
-</UL><UL>
-<H2>                                  'UPDATE prices SET price=? WHERE prod=?')
-</H2>
-</UL><UL>
-<H2>    dbd_preparse scanned 2 distinct placeholders
-</H2>
-</UL><UL>
-<H2>    &#060- prepare= DBI::st=HASH(0xe1274) at test.pl line 7.
-</H2>
+<LI><H2>Binding Arrays</H2>
 </UL></P>
 <P></P> 
 <P>
@@ -61,7 +45,34 @@
 <BR>
 </P>
 
+ <FONT size=4><STRONG> Notes: </FONT></STRONG>
+  <HR SIZE=3> <P> <UL>
+No particular order or time-scale!
+</UL><UL>
+Generic standards-based SQL92 Parser (in C) supplied with the DBI but not tied closely to it. Available for use by any module. SQL interfaces could appear on all sorts of modules. Outputs a parse tree as a perl recursive data structure.
+</UL><UL>
+A DBD::Proxy to ‘forward’ method calls and arguments across a network to any normal driver on a remote machine and return results
+</UL><UL>
+A DBD::Pipe to act as a virtual base class to simplify the development of drivers for data sources that don’t offer a programming interface/API.
+</UL><UL>
+Data types: date/time/interval - returned as a ref with ““ overloaded.
+</UL><UL>
+Define interface for non-blocking: $dbh-&#062{NonBlock}, $h-&#062done
+</UL><UL>
+	Initially Oracle and ODBC drivers. Only if database API supports it.
+</UL><UL>
+Make any changes required to support Threading in DB (if any)
+</UL><UL>
+	Individual drivers may need to declare themselves ‘thread-safe’
+</UL><UL>
+	If needed the DBI may block multi-threads from entering same driver.
+</UL><UL>
+Binding output parameters, typically for stored procedures.
+</UL><UL>
+Binding Arrays - especially Oracle
+</UL><UL>
 
+</UL> </P> 
 
 </Body>
 </HTML>

@@ -5,7 +5,7 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Safety by example</TITLE> 
+ <TITLE>Making simple things easy</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -13,78 +13,34 @@
 <CENTER>
 <TABLE WIDTH=100%> 
      <TR> <TD WIDTH=100% ALIGN=CENTER>
+         <IMG SRC="img017.gif" usemap="#Objmap" WIDTH=600 HEIGHT=450 BORDER=0>
+     </TD> </TR>
+     <TR> <TD WIDTH=100% ALIGN=CENTER>
          <A HREF="sld001.htm"><IMG SRC="first.gif" BORDER=0 ALT="First"></A>
          <A HREF="sld016.htm"><IMG SRC="prev.gif" BORDER=0 ALT="Previous"></A>
          <A HREF="sld018.htm"><IMG SRC="next.gif" BORDER=0 ALT="Next"></A>
-         <A HREF="sld034.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
+         <A HREF="sld029.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
          <IMG SRC="space.gif" BORDER=0>
          <A HREF="index.htm"><IMG SRC="info.gif" BORDER=0 ALT="Index"></A>
          <A HREF="tsld017.htm"><IMG SRC="text.gif" BORDER=0 ALT="Text"></A>
      </TD> </TR>
-     <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <IMG SRC="img017.gif" usemap="#Objmap" WIDTH=640 HEIGHT=480 BORDER=0>
-     </TD> </TR>
 </TABLE>
-<P>Slide 17 of 34</P>
+<P>Slide 17 of 29</P>
 </CENTER>
-
- <CENTER><Font size=4> <STRONG> Notes:  </FONT></STRONG><HR SIZE=3></CENTER><P> <UL>
-Classic example:
-</UL><UL>
-	bank account transfer:
-</UL><UL>
-		debit one account
-</UL><UL>
-		credit another account
-</UL><UL>
-	must be an ‘atomic’ operation.
-</UL><UL>
-	Can’t allow debit without the credit.
-</UL><UL>
-	Server-side errors: disk crash etc
-</UL><UL>
-	Client side errors: program die()’s or is killed</UL> </P> 
 <!-- <UL>
-<H2>Safety by example</H2>
+<H2>Making simple things easyand difficult things possible</H2>
 </UL></P>
 <P><UL>
-<H2>use DBI;
+<LI><H2>Goals
 </H2>
-</UL><UL>
-<H2>use Text::Wrap;
-</H2>
-</UL><UL>
-<H2>$dbh = DBI-&#062connect(…, …, …, {
-</H2>
-</UL><UL>
-<H2>    AutoCommit =&#062 0, RaiseError =&#062 1
-</H2>
-</UL><UL>
-<H2>});
-</H2>
-</UL><UL>
-<H2>eval {
-</H2>
-</UL><UL>
-<H2>    $sth = $dbh-&#062prepare('insert into table values (?)');
-</H2>
-</UL><UL>
-<H2>    foreach (@array_of_long_strings) {
-</H2>
-</UL><UL>
-<H2>        $text = wrap($_);
-</H2>
-</UL><UL>
-<H2>        $sth-&#062execute($test);
-</H2>
-</UL><UL>
-<H2>    }
-</H2>
-</UL><UL>
-<H2>};
-</H2>
-</UL><UL>
-<H2>$@ ? $dbh-&#062rollback : $dbh-&#062commit;</H2>
+<UL>
+<LI>Be simple to use for simple applications
+<LI>Have sufficient flexibility to accommodate unusual functionality and non-SQL databases
+<LI>Conform to applicable standards (ODBC etc.)
+<LI>Enable the creation of database-independent Perl scripts without being limited to the lowest functionality
+<LI>Be free.
+</UL></UL><UL>
+<LI><H2>A ‘higher-level’ interface than ODBC/JDBC</H2>
 </UL></P>
 <P>  -->
 </Body>

@@ -5,7 +5,7 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>So why use the Perl DBI?</TITLE> 
+ <TITLE>Reading the CSV file</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -13,35 +13,66 @@
 <CENTER>
 <TABLE WIDTH=100%> 
      <TR> <TD WIDTH=100% ALIGN=CENTER>
+         <IMG SRC="img007.gif" usemap="#Objmap" WIDTH=600 HEIGHT=450 BORDER=0>
+     </TD> </TR>
+     <TR> <TD WIDTH=100% ALIGN=CENTER>
          <A HREF="sld001.htm"><IMG SRC="first.gif" BORDER=0 ALT="First"></A>
          <A HREF="sld006.htm"><IMG SRC="prev.gif" BORDER=0 ALT="Previous"></A>
          <A HREF="sld008.htm"><IMG SRC="next.gif" BORDER=0 ALT="Next"></A>
-         <A HREF="sld034.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
+         <A HREF="sld029.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
          <IMG SRC="space.gif" BORDER=0>
          <A HREF="index.htm"><IMG SRC="info.gif" BORDER=0 ALT="Index"></A>
          <A HREF="tsld007.htm"><IMG SRC="text.gif" BORDER=0 ALT="Text"></A>
      </TD> </TR>
-     <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <IMG SRC="img007.gif" usemap="#Objmap" WIDTH=640 HEIGHT=480 BORDER=0>
-     </TD> </TR>
 </TABLE>
-<P>Slide 7 of 34</P>
+<P>Slide 7 of 29</P>
 </CENTER>
+
+ <CENTER><Font size=4> <STRONG> Notes:  </FONT></STRONG><HR SIZE=3></CENTER><P> <UL>
+Very few lines of code.
+</UL><UL>
+Just about every line directly related to the task.
+</UL><UL>
+
+</UL><UL>
+Not the best code in the world but it gets the job done.
+</UL><UL>
+(The split could be replaced with two lines of code to do the right thing
+</UL><UL>
+with quoted fields and embedded commas, for example.)
+</UL><UL>
+
+</UL> </P> 
 <!-- <UL>
-<H2>So why use the Perl DBI?</H2>
+<H2>Reading the CSV file</H2>
 </UL></P>
 <P><UL>
-<LI><H2>Because...
+<H2>open MARGIN, “&#060margin.csv” or die “open margin.csv: $!”;
 </H2>
-<UL>
-<LI>It delivers what it promises
-<LI>It’s simple and quick to use
-<LI>It’s fast, flexible and well proven
-<LI>It’s here, there and everywhere
-<LI>It’s free, with source
-<LI>Drivers available for many databases
-<LI>Commercial support is available
-<LI>It has a large user base and a strong future</UL></UL></P>
+</UL><UL>
+<H2>while (&#060MARGIN&#062) {
+</H2>
+</UL><UL>
+<H2>    chop;
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>    ($prod, $margin, $notes) = split /,/;
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>    $prod_margin{$prod} = $margin;
+</H2>
+</UL><UL>
+<H2>    $prod_notes{$prod}  = $notes;
+</H2>
+</UL><UL>
+<H2>}</H2>
+</UL></P>
 <P>  -->
 </Body>
 </HTML>

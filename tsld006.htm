@@ -4,53 +4,41 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>A Simple Example</TITLE> 
+ <TITLE>The Task</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>A Simple Example</H1> 
+ <H1>The Task</H1> 
  <P><UL>
-<H2>use DBI;
+<LI><H2>Read a tabular text report file of product codes and costs 
 </H2>
 </UL><UL>
-<H2>
+<H2>		CODE   DESCRIPTION   COST     OTHER NOTES
 </H2>
 </UL><UL>
-<H2>$dbh = DBI-&#062connect('dbi:ODBC:PRICE', 'user', 'password',
+<H2>		----   -----------   ------   -------------------
 </H2>
 </UL><UL>
-<H2>		{ RaiseError =&#062 1, AutoCommit =&#062 0 });
+<H2>		1201   WIDGET 37A    500.00   LEFT HANDED ONLY
 </H2>
 </UL><UL>
-<H2>$upd = $dbh-&#062prepare('UPDATE prices SET price=? WHERE prod=?');
+<H2>		1202   BRACKET X7J   790.00   REDUCED FROM 800.00
 </H2>
 </UL><UL>
-<H2>$ins = $dbh-&#062prepare('INSERT INTO prices(prod,price) VALUES (?,?)');
+<H2>		1203   FLANGE 9Q7    449.00   LIMITED STOCK
 </H2>
 </UL><UL>
-<H2>
+<LI><H2>Read a CSV file of product codes, price markup and comments		
 </H2>
 </UL><UL>
-<H2>while ($line = &#060COST&#062) {
+<H2>		1201,0.90,Special Offer for limited period only
 </H2>
 </UL><UL>
-<H2>    chop $line;
+<H2>		1202,1.30,
 </H2>
 </UL><UL>
-<H2>    ($prod, $price) = split /,/, $line;
-</H2>
-</UL><UL>
-<H2>    $rows = $upd-&#062execute($price, $prod);
-</H2>
-</UL><UL>
-<H2>    $ins-&#062execute($prod,$price) if $rows == 0;
-</H2>
-</UL><UL>
-<H2>}
-</H2>
-</UL><UL>
-<H2>$db-&#062commit;</H2>
+<LI><H2>Output a new tabular report containing the new product prices and comments word wrapped in a narrow field</H2>
 </UL></P>
 <P></P> 
 <P>
@@ -63,14 +51,7 @@
 <BR>
 </P>
 
- <FONT size=4><STRONG> Notes: </FONT></STRONG>
-  <HR SIZE=3> <P> <UL>
-Very few lines of code.
-</UL><UL>
 
-</UL><UL>
-Very simple to learn and use.
-</UL> </P> 
 
 </Body>
 </HTML>

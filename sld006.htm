@@ -5,7 +5,7 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>A Simple Example</TITLE> 
+ <TITLE>The Task</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -13,72 +13,52 @@
 <CENTER>
 <TABLE WIDTH=100%> 
      <TR> <TD WIDTH=100% ALIGN=CENTER>
+         <IMG SRC="img006.gif" usemap="#Objmap" WIDTH=600 HEIGHT=450 BORDER=0>
+     </TD> </TR>
+     <TR> <TD WIDTH=100% ALIGN=CENTER>
          <A HREF="sld001.htm"><IMG SRC="first.gif" BORDER=0 ALT="First"></A>
          <A HREF="sld005.htm"><IMG SRC="prev.gif" BORDER=0 ALT="Previous"></A>
          <A HREF="sld007.htm"><IMG SRC="next.gif" BORDER=0 ALT="Next"></A>
-         <A HREF="sld034.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
+         <A HREF="sld029.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
          <IMG SRC="space.gif" BORDER=0>
          <A HREF="index.htm"><IMG SRC="info.gif" BORDER=0 ALT="Index"></A>
          <A HREF="tsld006.htm"><IMG SRC="text.gif" BORDER=0 ALT="Text"></A>
      </TD> </TR>
-     <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <IMG SRC="img006.gif" usemap="#Objmap" WIDTH=640 HEIGHT=480 BORDER=0>
-     </TD> </TR>
 </TABLE>
-<P>Slide 6 of 34</P>
+<P>Slide 6 of 29</P>
 </CENTER>
-
- <CENTER><Font size=4> <STRONG> Notes:  </FONT></STRONG><HR SIZE=3></CENTER><P> <UL>
-Very few lines of code.
-</UL><UL>
-
-</UL><UL>
-Very simple to learn and use.
-</UL> </P> 
 <!-- <UL>
-<H2>A Simple Example</H2>
+<H2>The Task</H2>
 </UL></P>
 <P><UL>
-<H2>use DBI;
+<LI><H2>Read a tabular text report file of product codes and costs 
 </H2>
 </UL><UL>
-<H2>
+<H2>		CODE   DESCRIPTION   COST     OTHER NOTES
 </H2>
 </UL><UL>
-<H2>$dbh = DBI-&#062connect('dbi:ODBC:PRICE', 'user', 'password',
+<H2>		----   -----------   ------   -------------------
 </H2>
 </UL><UL>
-<H2>		{ RaiseError =&#062 1, AutoCommit =&#062 0 });
+<H2>		1201   WIDGET 37A    500.00   LEFT HANDED ONLY
 </H2>
 </UL><UL>
-<H2>$upd = $dbh-&#062prepare('UPDATE prices SET price=? WHERE prod=?');
+<H2>		1202   BRACKET X7J   790.00   REDUCED FROM 800.00
 </H2>
 </UL><UL>
-<H2>$ins = $dbh-&#062prepare('INSERT INTO prices(prod,price) VALUES (?,?)');
+<H2>		1203   FLANGE 9Q7    449.00   LIMITED STOCK
 </H2>
 </UL><UL>
-<H2>
+<LI><H2>Read a CSV file of product codes, price markup and comments		
 </H2>
 </UL><UL>
-<H2>while ($line = &#060COST&#062) {
+<H2>		1201,0.90,Special Offer for limited period only
 </H2>
 </UL><UL>
-<H2>    chop $line;
+<H2>		1202,1.30,
 </H2>
 </UL><UL>
-<H2>    ($prod, $price) = split /,/, $line;
-</H2>
-</UL><UL>
-<H2>    $rows = $upd-&#062execute($price, $prod);
-</H2>
-</UL><UL>
-<H2>    $ins-&#062execute($prod,$price) if $rows == 0;
-</H2>
-</UL><UL>
-<H2>}
-</H2>
-</UL><UL>
-<H2>$db-&#062commit;</H2>
+<LI><H2>Output a new tabular report containing the new product prices and comments word wrapped in a narrow field</H2>
 </UL></P>
 <P>  -->
 </Body>

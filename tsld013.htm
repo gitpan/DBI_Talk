@@ -4,35 +4,50 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Method call walk-through</TITLE> 
+ <TITLE>“Update the Prices in a Database!”</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Method call walk-through</H1> 
+ <H1>“Update the Prices in a Database!”</H1> 
  <P><UL>
-<LI><H2>Consider a simple prepare call:   $dbh-&#062prepare(...)
+<H2>use DBI;
 </H2>
 </UL><UL>
-<LI><H2>$dbh is reference to a DBI::db object (regardless of driver)
+<H2>
 </H2>
 </UL><UL>
-<LI><H2>DBI::db::prepare is an alias for DBI dispatch method
+<H2>$db = DBI-&#062connect('dbi:ODBC:PRICE', 'user', 'password',
 </H2>
 </UL><UL>
-<LI><H2>Dispatch calls driver’s prepare method something like this:
+<H2>		{ RaiseError =&#062 1 });
 </H2>
 </UL><UL>
-<H2>   my $inner_hash_ref = …     # from tie magic
+<H2>$upd = $db-&#062prepare('UPDATE prices SET price=? WHERE prod=?');
 </H2>
 </UL><UL>
-<H2>   my $implementor_class = …  # from DBI magic data
+<H2>$ins = $db-&#062prepare('INSERT INTO prices(prod,price) VALUES (?,?)');
 </H2>
 </UL><UL>
-<H2>   $inner_hash_ref-&#062$implementor_class::prepare(…)
+<H2>
 </H2>
 </UL><UL>
-<LI><H2>Since driver code gets inner hash it has fast access to the hash contents</H2>
+<H2>while ($line = &#060COST&#062) {
+</H2>
+</UL><UL>
+<H2>    . . .
+</H2>
+</UL><UL>
+<H2>    $rows = $upd-&#062execute($price, $prod);
+</H2>
+</UL><UL>
+<H2>    $ins-&#062execute($prod,$price) if $rows == 0;
+</H2>
+</UL><UL>
+<H2>}
+</H2>
+</UL><UL>
+<H2>$db-&#062commit;</H2>
 </UL></P>
 <P></P> 
 <P>
@@ -45,7 +60,12 @@
 <BR>
 </P>
 
-
+ <FONT size=4><STRONG> Notes: </FONT></STRONG>
+  <HR SIZE=3> <P> <UL>
+Here we add just 8 lines to store the prices in the database.
+</UL><UL>
+The code not only updates prices for products already in the database but also inserts new records for any products not in the database.
+</UL> </P> 
 
 </Body>
 </HTML>

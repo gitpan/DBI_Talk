@@ -4,50 +4,23 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Safety by example</TITLE> 
+ <TITLE>Making simple things easy</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Safety by example</H1> 
+ <H1>Making simple things easyand difficult things possible</H1> 
  <P><UL>
-<H2>use DBI;
+<LI><H2>Goals
 </H2>
-</UL><UL>
-<H2>use Text::Wrap;
-</H2>
-</UL><UL>
-<H2>$dbh = DBI-&#062connect(…, …, …, {
-</H2>
-</UL><UL>
-<H2>    AutoCommit =&#062 0, RaiseError =&#062 1
-</H2>
-</UL><UL>
-<H2>});
-</H2>
-</UL><UL>
-<H2>eval {
-</H2>
-</UL><UL>
-<H2>    $sth = $dbh-&#062prepare('insert into table values (?)');
-</H2>
-</UL><UL>
-<H2>    foreach (@array_of_long_strings) {
-</H2>
-</UL><UL>
-<H2>        $text = wrap($_);
-</H2>
-</UL><UL>
-<H2>        $sth-&#062execute($test);
-</H2>
-</UL><UL>
-<H2>    }
-</H2>
-</UL><UL>
-<H2>};
-</H2>
-</UL><UL>
-<H2>$@ ? $dbh-&#062rollback : $dbh-&#062commit;</H2>
+<UL>
+<LI>Be simple to use for simple applications
+<LI>Have sufficient flexibility to accommodate unusual functionality and non-SQL databases
+<LI>Conform to applicable standards (ODBC etc.)
+<LI>Enable the creation of database-independent Perl scripts without being limited to the lowest functionality
+<LI>Be free.
+</UL></UL><UL>
+<LI><H2>A ‘higher-level’ interface than ODBC/JDBC</H2>
 </UL></P>
 <P></P> 
 <P>
@@ -60,23 +33,7 @@
 <BR>
 </P>
 
- <FONT size=4><STRONG> Notes: </FONT></STRONG>
-  <HR SIZE=3> <P> <UL>
-Classic example:
-</UL><UL>
-	bank account transfer:
-</UL><UL>
-		debit one account
-</UL><UL>
-		credit another account
-</UL><UL>
-	must be an ‘atomic’ operation.
-</UL><UL>
-	Can’t allow debit without the credit.
-</UL><UL>
-	Server-side errors: disk crash etc
-</UL><UL>
-	Client side errors: program die()’s or is killed</UL> </P> 
+
 
 </Body>
 </HTML>

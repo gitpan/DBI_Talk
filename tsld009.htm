@@ -4,29 +4,45 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Under the Hood</TITLE> 
+ <TITLE>Writing the New Report</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Under the Hood</H1> 
+ <H1>Writing the New Report</H1> 
  <P><UL>
-<LI><H2>DBI defines and implements an interface
+<H2>open COST, "&#060cost.txt" or die "open cost.txt: $!";
 </H2>
 </UL><UL>
-<LI><H2>Driver modules do much of the real work
+<H2>while ($line = &#060COST&#062) {
 </H2>
 </UL><UL>
-<LI><H2>DBI provides default methods, functions, tools etc  for drivers
+<H2>    next unless $line =~ m/^\d/;
 </H2>
 </UL><UL>
-<LI><H2>Not limited to the lowest common denominator -  mechanism provided for driver specific extensions
+<H2>
 </H2>
 </UL><UL>
-<LI><H2>Designed and built for speed
+<H2>    ($prod, $cost) = unpack 'A4 @20 A7', $line;
 </H2>
 </UL><UL>
-<LI><H2>Valuable detailed call tracing/debugging built-in</H2>
+<H2>
+</H2>
+</UL><UL>
+<H2>    $cost *= $prod_margin{$prod} || 1.10;
+</H2>
+</UL><UL>
+<H2>    $note  = $prod_notes{$prod}  || 'n/a';
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>    write;  # using format with $prod, $cost and $note
+</H2>
+</UL><UL>
+<H2>}
+</H2>
 </UL></P>
 <P></P> 
 <P>
@@ -41,17 +57,22 @@
 
  <FONT size=4><STRONG> Notes: </FONT></STRONG>
   <HR SIZE=3> <P> <UL>
-Similar in concept to an ODBC Driver Manager
+Here we read each line from the costs text file,
+</UL><UL>
+skip lines that don't start with digits,
+</UL><UL>
+extract the product and cost,
+</UL><UL>
+apply the margin (or a default),
+</UL><UL>
+apply the note (or a default),
+</UL><UL>
+and write the output.
 </UL><UL>
 
 </UL><UL>
-DBI provides methods, functions and tools etc
-</UL><UL>
-	helps ensure conformant implementations
-</UL><UL>
-	and efficient implementations
-</UL><UL>
-	and more automatic support for new features</UL> </P> 
+Again: very few lines of code and just about every line directly related to the task.
+</UL> </P> 
 
 </Body>
 </HTML>

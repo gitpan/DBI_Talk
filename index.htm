@@ -4,13 +4,13 @@
 <head>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
-<title>Getting Seriouswith the Perl DBI</title>
+<title>IntegratingPerl and Databases</title>
 </head>
 
 <BODY     >
 <CENTER>
-<h1>Getting Seriouswith the Perl DBI</h1>
-<h4>15/12/98</h4>
+<h1>IntegratingPerl and Databases</h1>
+<h4>7/11/98</h4>
 <br><h2> <A HREF="sld001.htm">Click here to start</A>
  </h2><br>  
 </center>
@@ -19,50 +19,45 @@
   <tr>
    <td valign=top align=left width=50%>
       <h3><u>Table of Contents</u></h3>
-            <P ALIGN=LEFT><A HREF="sld001.htm">Getting Seriouswith the Perl DBI</A></P>
-        <P ALIGN=LEFT><A HREF="sld002.htm">Why Perl for Databases?</A></P>
-        <P ALIGN=LEFT><A HREF="sld003.htm">What Is the Perl DBI?</A></P>
-        <P ALIGN=LEFT><A HREF="sld004.htm">What drives the design of the DBI?</A></P>
-        <P ALIGN=LEFT><A HREF="sld005.htm">Where does the DBI fit?</A></P>
-        <P ALIGN=LEFT><A HREF="sld006.htm">A Simple Example</A></P>
-        <P ALIGN=LEFT><A HREF="sld007.htm">So why use the Perl DBI?</A></P>
-        <P ALIGN=LEFT><A HREF="sld008.htm">Comparing DBI and Alternatives(Attempting the Impossible!)</A></P>
-        <P ALIGN=LEFT><A HREF="sld009.htm">Under the Hood</A></P>
-        <P ALIGN=LEFT><A HREF="sld010.htm">Architecture of the DBI Classes #1</A></P>
-        <P ALIGN=LEFT><A HREF="sld011.htm">Architecture of the DBI Classes #2</A></P>
-        <P ALIGN=LEFT><A HREF="sld012.htm">Anatomy of a DBI Handle</A></P>
-        <P ALIGN=LEFT><A HREF="sld013.htm">Method call walk-through</A></P>
-        <P ALIGN=LEFT><A HREF="sld014.htm">Give me SPEED!</A></P>
-        <P ALIGN=LEFT><A HREF="sld015.htm">What's the difference?</A></P>
-        <P ALIGN=LEFT><A HREF="sld016.htm">Give me SAFETY!</A></P>
-        <P ALIGN=LEFT><A HREF="sld017.htm">Safety by example</A></P>
-        <P ALIGN=LEFT><A HREF="sld018.htm">Give me (a vague impression of ) SAFETY!</A></P>
-        <P ALIGN=LEFT><A HREF="sld019.htm">Wheels within wheelsWatching the DBI in action</A></P>
-        <P ALIGN=LEFT><A HREF="sld020.htm">Our program for today...</A></P>
-        <P ALIGN=LEFT><A HREF="sld021.htm">Trace Level 1</A></P>
-        <P ALIGN=LEFT><A HREF="sld022.htm">Trace Level 2</A></P>
-        <P ALIGN=LEFT><A HREF="sld023.htm">Trace Level 2 (continued)</A></P>
-        <P ALIGN=LEFT><A HREF="sld024.htm">Trace Level 2 (concluded)</A></P>
-        <P ALIGN=LEFT><A HREF="sld025.htm">State of the Nation</A></P>
-        <P ALIGN=LEFT><A HREF="sld026.htm">What's New in the DBI?</A></P>
-        <P ALIGN=LEFT><A HREF="sld027.htm">The Interactive DBI::Shell</A></P>
-        <P ALIGN=LEFT><A HREF="sld028.htm">DBD::Proxy & DBI::ProxyServer</A></P>
-        <P ALIGN=LEFT><A HREF="sld029.htm">DBD::Proxy & DBI::ProxyServer</A></P>
-        <P ALIGN=LEFT><A HREF="sld030.htm">What   Next?</A></P>
-        <P ALIGN=LEFT><A HREF="sld031.htm">So What's Next Now?</A></P>
-        <P ALIGN=LEFT><A HREF="sld032.htm">What's new in DBD::Oracle?</A></P>
-        <P ALIGN=LEFT><A HREF="sld033.htm">PPT Slide</A></P>
-        <P ALIGN=LEFT><A HREF="sld034.htm">The end.</A></P>
+            <P ALIGN=LEFT><A HREF="sld001.htm">IntegratingPerl and Databases</A></P>
+        <P ALIGN=LEFT><A HREF="sld002.htm">Why?</A></P>
+        <P ALIGN=LEFT><A HREF="sld003.htm">Why Perl?</A></P>
+        <P ALIGN=LEFT><A HREF="sld004.htm">Why Perl for Databases?</A></P>
+        <P ALIGN=LEFT><A HREF="sld005.htm">Your Mission...</A></P>
+        <P ALIGN=LEFT><A HREF="sld006.htm">The Task</A></P>
+        <P ALIGN=LEFT><A HREF="sld007.htm">Reading the CSV file</A></P>
+        <P ALIGN=LEFT><A HREF="sld008.htm">Defining the Output Format</A></P>
+        <P ALIGN=LEFT><A HREF="sld009.htm">Writing the New Report</A></P>
+        <P ALIGN=LEFT><A HREF="sld010.htm">Mission Accomplished!</A></P>
+        <P ALIGN=LEFT><A HREF="sld011.htm">Changeis the only Constant</A></P>
+        <P ALIGN=LEFT><A HREF="sld012.htm">“Cache the data for other uses!”</A></P>
+        <P ALIGN=LEFT><A HREF="sld013.htm">“Update the Prices in a Database!”</A></P>
+        <P ALIGN=LEFT><A HREF="sld014.htm">“Now get Cost Data from a Database!”</A></P>
+        <P ALIGN=LEFT><A HREF="sld015.htm">What Is the Perl DBI?</A></P>
+        <P ALIGN=LEFT><A HREF="sld016.htm">Why the Perl DBI?</A></P>
+        <P ALIGN=LEFT><A HREF="sld017.htm">Making simple things easyand difficult things possible</A></P>
+        <P ALIGN=LEFT><A HREF="sld018.htm">Getting Technical...</A></P>
+        <P ALIGN=LEFT><A HREF="sld019.htm">Under the Hood</A></P>
+        <P ALIGN=LEFT><A HREF="sld020.htm">A Picture is Worth...</A></P>
+        <P ALIGN=LEFT><A HREF="sld021.htm">State of the Nation</A></P>
+        <P ALIGN=LEFT><A HREF="sld022.htm">What Next?</A></P>
+        <P ALIGN=LEFT><A HREF="sld023.htm">Comparing DBI and Alternatives(Attempting the Impossible!)</A></P>
+        <P ALIGN=LEFT><A HREF="sld024.htm">So why use the Perl DBI?</A></P>
+        <P ALIGN=LEFT><A HREF="sld025.htm">So What?</A></P>
+        <P ALIGN=LEFT><A HREF="sld026.htm">Success Stories in Industry</A></P>
+        <P ALIGN=LEFT><A HREF="sld027.htm">Too Good to Be True?</A></P>
+        <P ALIGN=LEFT><A HREF="sld028.htm">And finally...</A></P>
+        <P ALIGN=LEFT><A HREF="sld029.htm">The end.</A></P>
 
    </td>
    <td valign=top width=50%>
 	 <strong>Author: </strong>Tim Bunce 
-    
+     <P> <strong>Email: </strong> <A HREF="MAILTO:dbi-users@fugue.com">dbi-users@fugue.com</A> </P> 
 	
 	
 	
 	
-	 <P><A HREF="DBI_Talk2_1998_15.ppt"> Download presentation source </A> 
+	 <P><A HREF="pc1dbi19.ppt"> Download presentation source </A> 
    </td>
   </tr>
  </table>

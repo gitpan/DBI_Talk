@@ -5,7 +5,7 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for Microsoft PowerPoint 97">
- <TITLE>Anatomy of a DBI Handle</TITLE> 
+ <TITLE>“Cache the data for other uses!”</TITLE> 
 </HEAD>
 
 <BODY     >
@@ -13,27 +13,56 @@
 <CENTER>
 <TABLE WIDTH=100%> 
      <TR> <TD WIDTH=100% ALIGN=CENTER>
+         <IMG SRC="img012.gif" usemap="#Objmap" WIDTH=600 HEIGHT=450 BORDER=0>
+     </TD> </TR>
+     <TR> <TD WIDTH=100% ALIGN=CENTER>
          <A HREF="sld001.htm"><IMG SRC="first.gif" BORDER=0 ALT="First"></A>
          <A HREF="sld011.htm"><IMG SRC="prev.gif" BORDER=0 ALT="Previous"></A>
          <A HREF="sld013.htm"><IMG SRC="next.gif" BORDER=0 ALT="Next"></A>
-         <A HREF="sld034.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
+         <A HREF="sld029.htm"><IMG SRC="last.gif" BORDER=0 ALT="Last"></A>
          <IMG SRC="space.gif" BORDER=0>
          <A HREF="index.htm"><IMG SRC="info.gif" BORDER=0 ALT="Index"></A>
          <A HREF="tsld012.htm"><IMG SRC="text.gif" BORDER=0 ALT="Text"></A>
      </TD> </TR>
-     <TR> <TD WIDTH=100% ALIGN=CENTER>
-         <IMG SRC="img012.gif" usemap="#Objmap" WIDTH=640 HEIGHT=480 BORDER=0>
-     </TD> </TR>
 </TABLE>
-<P>Slide 12 of 34</P>
+<P>Slide 12 of 29</P>
 </CENTER>
+
+ <CENTER><Font size=4> <STRONG> Notes:  </FONT></STRONG><HR SIZE=3></CENTER><P> <UL>
+The company grows and now stocks thousands of products.
+</UL><UL>
+To save time the derived price for each product can be saved in a simple DBM' database (support for which is built into perl) and made available to other perl programs.
+</UL><UL>
+Just two additional lines of code is all that's needed.
+</UL><UL>
+(A similar pair of lines is all that's needed to read the data.)</UL> </P> 
 <!-- <UL>
-<H2>Anatomy of a DBI Handle</H2>
+<H2>“Cache the data for other uses!”</H2>
 </UL></P>
 <P><UL>
-Handle
+<H2>dbmopen(%price_cache, "price_cache", 0644) or die …;
+</H2>
 </UL><UL>
-Ref.</UL></P>
+<H2>
+</H2>
+</UL><UL>
+<H2>while ($line = &#060COST&#062) {
+</H2>
+</UL><UL>
+<H2>    . . .
+</H2>
+</UL><UL>
+<H2>    write;  # using format with $prod, $cost and $note
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<H2>	 $price_cache{$prod} = "$cost $note";
+</H2>
+</UL><UL>
+<H2>}</H2>
+</UL></P>
 <P>  -->
 </Body>
 </HTML>

@@ -4,32 +4,54 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=windows-1252">
 <meta name="GENERATOR" content="Microsoft Internet Assistant for PowerPoint 97">
- <TITLE>Give me SPEED!</TITLE> 
+ <TITLE>“Now get Cost Data from a Database!”</TITLE> 
 </HEAD>
 
 <BODY     >
 
- <H1>Give me SPEED!</H1> 
+ <H1>“Now get Cost Data from a Database!”</H1> 
  <P><UL>
-<LI><H2>DBI designed for speed from day one.
+<LI><H2>Original Code 
 </H2>
 </UL><UL>
-<LI><H2>DBI dispatch written in hand-crafted XS/C.
+<H2>
 </H2>
 </UL><UL>
-<LI><H2>Dispatch to XS driver methods optimized.
+<H2>open COST, "&#060cost.txt" or die "open cost.txt: $!";
 </H2>
 </UL><UL>
-<LI><H2>Cached attributes returned by dispatch.
+<H2>while ($line = &#060COST&#062) {
 </H2>
 </UL><UL>
-<LI><H2>Placeholders give maximum server performance.
+<H2>    next unless $line =~ m/^\d/;
 </H2>
 </UL><UL>
-<LI><H2>Binding columns and/or fetchrow_arrayref give maximum client-side fetch performance.
+<H2>    ($prod, $cost) = unpack 'A4 @20 A7', $line;
 </H2>
 </UL><UL>
-<LI><H2>DBI overhead is generally insignificant.</H2>
+<H2>    . . .
+</H2>
+</UL><UL>
+<H2>
+</H2>
+</UL><UL>
+<LI><H2>New Code 
+</H2>
+</UL><UL>
+<H2>$costs = $cost_db-&#062prepare('SELECT prod,cost FROM costs');
+</H2>
+</UL><UL>
+<H2>$costs-&#062execute;
+</H2>
+</UL><UL>
+<H2>while ( ($prod, $cost) = $costs-&#062fetchrow_array ) {
+</H2>
+</UL><UL>
+<H2>    . . .
+</H2>
+</UL><UL>
+<LI><H2>
+</H2>
 </UL></P>
 <P></P> 
 <P>
@@ -42,7 +64,10 @@
 <BR>
 </P>
 
-
+ <FONT size=4><STRONG> Notes: </FONT></STRONG>
+  <HR SIZE=3> <P> <UL>
+Here we have changed just 4 lines to fetch the costs from the database.
+</UL> </P> 
 
 </Body>
 </HTML>
